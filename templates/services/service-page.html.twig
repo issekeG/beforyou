@@ -1,0 +1,150 @@
+{% extends 'base.html.twig' %}
+{% block seo %}
+  <title>Be for you home</title>
+  <meta name="description" content="Be for you home">
+  <meta name="keywords" content="mots-clés, optimisé SEO, exemple">
+{% endblock %}
+
+
+
+
+{% block main %}
+
+      <main>
+
+        <!-- Hero area start -->
+        <section class="solution__area">
+          <div class="solution__wrapper">
+            <div class="solution__left">
+              <div class="solution__img-1">
+                <img src="{{asset('assets/imgs/activity-static/photo1.png')}}" alt="Solution Image">
+              </div>
+              <div class="solution__img-2">
+                <img src="{{asset('assets/imgs/activity-static/photo3.png')}}" alt="Solution Image">
+              </div>
+            </div>
+
+            <div class="solution__mid">
+              <h1 class="solution__title animation__char_come">Nos Solutions</h1>
+              <p>
+                Nous proposons des solutions innovantes dans l’industrie, l’impression et la communication, tout en soutenant des initiatives sociales et environnementales. Notre mission : allier expertise et durabilité pour répondre à vos besoins.
+              </p>
+            </div>
+
+            <div class="solution__right">
+              <div class="solution__img-3">
+                <img src="{{asset('assets/imgs/activity-static/photo2.png')}}" alt="Solution Image">
+              </div>
+            </div>
+          </div>
+
+          <div class="solution__shape">
+            <img src="assets/imgs/icon/1.png" alt="Shape Image" class="shape-1">
+            <img src="assets/imgs/icon/2.png" alt="Shape Image" class="shape-2">
+            <img src="assets/imgs/icon/3.png" alt="Shape Image" class="shape-3">
+            <img src="assets/imgs/icon/4.png" alt="Shape Image" class="shape-4">
+            <img src="assets/imgs/icon/5.png" alt="Shape Image" class="shape-5">
+          </div>
+        </section>
+        <!-- Hero area end -->
+
+
+        <!-- Service area start -->
+        <section class="service__area-6">
+          <div class="container">
+            <div class="row inherit-row">
+              <div class="col-xxl-12">
+                <div class="content-wrapper">
+                  <div class="left-content">
+                    <ul class="service__list-6">
+
+                      {% for subsidiaries in all_subsidiaries %}
+                        <li ><a href="#service{{subsidiaries.id}}">{{ subsidiaries.name}} <br></a></li>
+                      {% endfor %}
+
+                    </ul>
+                  </div>
+
+                  <div class="mid-content">
+                    {% for subsidiaries in all_subsidiaries %}
+                      <div class="service__image">
+                        <img src="{{ asset('uploads/subsidiary/' ~ subsidiaries.photo) }}" alt="Service Image">
+                      </div>
+                    {% endfor %}
+                  </div>
+
+                  <div class="right-content">
+                    <div class="service__items-6">
+
+                      {% for subsidiaries in all_subsidiaries %}
+
+                      <div class="service__item-6" id="service{{subsidiaries.id}}" data-secid="{{subsidiaries.id}}">
+                        <div class="image-tab">
+                          <img src="{{ asset('uploads/subsidiary/' ~ subsidiaries.photo) }}" alt="subsidiaries Image">
+                        </div>
+
+                        <div>
+                          <h2 class="service__title-6 title-anim"> Be for You {{subsidiaries.name  }}</h2>
+                          <div class="subsidiary-description">
+                            {{ subsidiaries.description |raw }}
+                          </div>
+                          <ul>
+                            {% for activity in subsidiaries.activities %}
+                            <li>+ <a href="" style="color: white">{{ activity.name }}</a></li>
+                            {% endfor %}
+
+                          </ul>
+                          <div class="btn_wrapper">
+                            <a href="" class="wc-btn-secondary btn-item btn-hover"><span></span>Voir
+                              <br>Plus <i class="fa-solid fa-arrow-right"></i></a>
+                          </div>
+                        </div>
+                      </div>
+                      {% endfor %}
+
+
+
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Service area end -->
+
+        <!-- Brand area start -->
+        {% include 'brand/brand.html.twig.html' %}
+        <!-- Brand area end -->
+
+
+        <!-- CTA area start -->
+        <section class="cta__area">
+          <div class="container line pt-100 pb-110 no-p">
+            <span class="line-3"></span>
+            <div class="row">
+              <div class="col-xxl-12">
+                <div class="cta__content">
+                  <p class="cta__sub-title">Travaillez avec nous</p>
+                  <h2 class="cta__title title-anim">Nous serions ravis d'en savoir plus sur votre projet</h2>
+                  <div class="btn_wrapper">
+                    <a href="contact.html" class="wc-btn-primary btn-item btn-hover"><span></span>Discutons-en <i
+                              class="fa-solid fa-arrow-right"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- CTA area end -->
+
+      </main>
+{% endblock %}
+
+
+
+  {% block modal_testimonial %}
+  {% endblock %}
+

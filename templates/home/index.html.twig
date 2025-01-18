@@ -1,0 +1,612 @@
+{% extends 'base.html.twig' %}
+{% block seo %}
+    <title>Be for you home</title>
+    <meta name="description" content="Be for you home">
+    <meta name="keywords" content="mots-clés, optimisé SEO, exemple">
+{% endblock %}
+
+{% block main %}
+    <main>
+
+        <!-- Hero area start -->
+        <section class="hero__area-2">
+            <div class="hero__inner-2">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <!-- Slide 1 -->
+                        <div class="swiper-slide slide-1">
+                            <div class="hero__inner-2-slide">
+                                <div class="sec-title-wrapper" id="slide-1-title">
+                                    <h2 class="sec-title-3 bg-shape pb-0"  >Construction <br> Bâtiment</h2>
+                                    <h2 class="sec-title-3" >Partenaire <br>Idéal</h2>
+                                </div>
+                                <div class="hero__text-2">
+                                    <p>
+                                        <i class="fa fa-check-circle" aria-hidden="true"></i> Maison  <i class="fa fa-check-circle" aria-hidden="true"></i> Immeubles <i class="fa fa-check-circle" aria-hidden="true"></i> Usines  <i class="fa fa-check-circle" aria-hidden="true"></i> Bureaux <i class="fa fa-check-circle" aria-hidden="true"></i> Locaux
+                                    </p>
+                                    <div class="hero__button btn_wrapper">
+                                        <a href="{{ path('app_activity') }}" class="wc-btn-pink btn-hover btn-item"><span></span>
+                                            Explore <br>Voir plus <i class="fa-solid fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="swiper-slide slide-2">
+                            <div class="hero__inner-2-slide">
+                                <div class="sec-title-wrapper" id="slide-2-title">
+                                    <h2 class="sec-title-3 bg-shape">Forage d'eau</h2>
+                                    <h2 class="sec-title-3">. <br>.</h2>
+                                </div>
+                                <div class="hero__text-2">
+                                    <p>Notre bureau d'étude s'assurera d'effectuer tous les contrôles nécessaires afin de nous permettre d'effectuer un travail impécable et de le livrer dans les délais.</p>
+                                    <div class="hero__button btn_wrapper">
+                                        <a href="{{ path('app_activity') }}" class="wc-btn-pink btn-hover btn-item"><span></span>
+                                            Explore <br>our services <i class="fa-solid fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="swiper-slide slide-3">
+                            <div class="hero__inner-2-slide">
+                                <div class="sec-title-wrapper" id="slide-3-title">
+                                    <h2 class="sec-title-3 bg-shape">Impression numérique <br>et offset</h2>
+                                    <h2 class="sec-title-3">.<br>.</h2>
+                                </div>
+                                <div class="hero__text-2">
+                                    <p>
+                                        Nous proposons des services d'impression numérique et offset de haute qualité, adaptés à vos besoins professionnels et personnels. Que ce soit pour des cartes de visite, brochures, affiches ou tout autre support, nous garantissons des résultats précis et soignés
+                                    </p>
+                                    <div class="hero__button btn_wrapper">
+                                        <a href="{{ path('app_activity') }}" class="wc-btn-pink btn-hover btn-item"><span></span>
+                                            Explore <br>our services <i class="fa-solid fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 4 -->
+                        <div class="swiper-slide slide-4">
+                            <div class="hero__inner-2-slide">
+                                <div class="sec-title-wrapper">
+                                    <h2 class="sec-title-3 bg-shape">Conception graphique <br></h2>
+                                    <h2 class="sec-title-3">et <br>design</h2>
+                                </div>
+                                <div class="hero__text-2">
+                                    <p>Nous proposons des services de conception graphique et design pour donner
+                                        vie à vos idées et valoriser votre identité visuelle.
+                                        De la création de logos aux designs personnalisés, nous vous accompagnons pour des
+                                        résultats uniques et professionnels.
+                                    </p>
+                                    <div class="hero__button btn_wrapper">
+                                        <a href="{{ path('app_activity') }}" class="wc-btn-pink btn-hover btn-item"><span></span>
+                                            Explore <br>our services <i class="fa-solid fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 5 -->
+                        <div class="swiper-slide slide-5">
+                            <div class="hero__inner-2-slide">
+                                <div class="sec-title-wrapper" id="slide-5-title">
+                                    <h2 class="sec-title-3 bg-shape">Collaboration avec <br>écoles & </h2>
+                                    <h2 class="sec-title-3">Institutions <br>locales</h2>
+                                </div>
+                                <div class="hero__text-2">
+                                    <p>Nous travaillons en étroite collaboration avec les écoles et institutions locales pour fournir des solutions adaptées à leurs besoins,
+                                        qu'il s'agisse d'uniformes scolaires, de supports imprimés ou de conception graphique. </p>
+                                    <div class="hero__button btn_wrapper">
+                                        <a href="{{ path('app_activity') }}" class="wc-btn-pink btn-hover btn-item"><span></span>
+                                            Explore <br>our services <i class="fa-solid fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 6 -->
+                        <div class="swiper-slide slide-6">
+                            <div class="hero__inner-2-slide">
+                                <div class="sec-title-wrapper" id="slide-6-title">
+                                    <h2 class="sec-title-3 bg-shape">Conception et <br>fabrication</h2>
+                                    <h2 class="sec-title-3">D'uniformes <br>scolaires</h2>
+                                </div>
+                                <div class="hero__text-2">
+                                    <p>Nous concevons et fabriquons des uniformes scolaires alliant confort, qualité et durabilité.
+                                        Nos créations sont adaptées aux besoins spécifiques des établissements scolaires pour refléter leur identité avec style et professionnalisme.</p>
+                                    <div class="hero__button btn_wrapper">
+                                        <a href="{{ path('app_activity') }}" class="wc-btn-pink btn-hover btn-item"><span></span>
+                                            Explore <br>our services <i class="fa-solid fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 7 -->
+                        <div class="swiper-slide slide-7">
+                            <div class="hero__inner-2-slide">
+                                <div class="sec-title-wrapper">
+                                    <h2 class="sec-title-3 bg-shape">We Design <br>Unique</h2>
+                                    <h2 class="sec-title-3">Digital <br>Experience</h2>
+                                </div>
+                                <div class="hero__text-2">
+                                    <p>Thinking, writing and planning with brand are just a of what we do. For
+                                        more than 10 years, It’s more
+                                        competitive space for agency.</p>
+                                    <div class="hero__button btn_wrapper">
+                                        <a href="{{ path('app_activity') }}" class="wc-btn-pink btn-hover btn-item"><span></span>
+                                            Explore <br>our services <i class="fa-solid fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 8 -->
+                        <div class="swiper-slide slide-8">
+                            <div class="hero__inner-2-slide">
+                                <div class="sec-title-wrapper">
+                                    <h2 class="sec-title-3 bg-shape">We Design <br>Unique</h2>
+                                    <h2 class="sec-title-3">Digital <br>Experience</h2>
+                                </div>
+                                <div class="hero__text-2">
+                                    <p>Thinking, writing and planning with brand are just a of what we do. For
+                                        more than 10 years, It’s more
+                                        competitive space for agency.</p>
+                                    <div class="hero__button btn_wrapper">
+                                        <a href="{{ path('app_activity') }}" class="wc-btn-pink btn-hover btn-item"><span></span>
+                                            Explore <br>our services <i class="fa-solid fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 9 -->
+                        <div class="swiper-slide slide-9">
+                            <div class="hero__inner-2-slide">
+                                <div class="sec-title-wrapper">
+                                    <h2 class="sec-title-3 bg-shape">We Design <br>Unique</h2>
+                                    <h2 class="sec-title-3">Digital <br>Experience</h2>
+                                </div>
+                                <div class="hero__text-2">
+                                    <p>Thinking, writing and planning with brand are just a of what we do. For
+                                        more than 10 years, It’s more
+                                        competitive space for agency.</p>
+                                    <div class="hero__button btn_wrapper">
+                                        <a href="{{ path('app_activity') }}" class="wc-btn-pink btn-hover btn-item"><span></span>
+                                            Explore <br>our services <i class="fa-solid fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <!-- Swiper JS -->
+                <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+                <!-- Initialize Swiper -->
+                <script>
+                    var swiper = new Swiper(".mySwiper", {
+                        pagination: {
+                            el: ".swiper-pagination",
+                        },
+                        autoplay: {
+                            delay: 3000,
+                        },
+                        speed: 3000,
+                    });
+                </script>
+            </div>
+
+
+        </section>
+
+        {% block sub_main %}
+            <!-- Hero area end -->
+            <!-- Roll area start -->
+            <section class="roll__area-2">
+                <div class="swiper roll__slider">
+                    <div class="swiper-wrapper roll__wrapper">
+                        {% for filiale in all_subsidiaries %}
+                            <div class="swiper-slide roll__slide">
+                                <h2>{{ filiale.name }}</h2>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+            <!-- Roll area end -->
+
+            <!-- About area start -->
+            <section class="about__area">
+                <div class="container line g-0 pt-140 pb-130">
+                    <span class="line-3"></span>
+                    <div class="row">
+                        <div class="col-xxl-12">
+                            <div class="about__title-wrapper">
+                                <h3 class="sec-title title-anim">
+                                    Une Entreprise Polyvalente au Service de l'Innovation et du Développement Durable
+                                </h3>
+                            </div>
+
+                            <div class="about__content-wrapper">
+                                <div class="about__img">
+                                    <div class="img-anim">
+                                        <img src="{{ asset('assets/imgs/about/be-for-you.png') }}" alt="About Image" data-speed="0.3">
+                                    </div>
+
+                                    <div class="about__img-right">
+                                        <img src="{{ asset('assets/imgs/about/mini-be-for-you.png') }}" alt="About Image Right" data-speed="0.5">
+                                        <div class="shape">
+                                            <div class="secondary" data-speed="0.9"></div>
+                                            <div class="primary"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="about__content text-anim">
+                                    <p>
+                                        Notre entreprise offre des solutions innovantes et diversifiées, allant de la construction et du forage (BTP) à la conception graphique, l'impression et la communication stratégique. Engagés dans la responsabilité sociale, nous menons des initiatives communautaires et environnementales tout en proposant des services sur mesure pour répondre aux besoins de nos clients avec expertise et impact positif.
+                                    </p>
+
+                                    <div class="cursor-btn btn_wrapper">
+                                        <a class="btn-item wc-btn-primary btn-hover" href="about.html"><span></span> Explorez-nous<i
+                                                    class="fa-solid fa-arrow-right"></i></a>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- About area end -->
+
+            <!-- Service area start -->
+            <section class="service__area pt-80 pb-150">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4">
+                            <div class="sec-title-wrapper wrap">
+                                <h3 class="sec-title title-anim">Nos Activités
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-5">
+                            <div class="service__top-text text-anim">
+                                <p>Avec chacun de nos clients, nous faisons naître une profonde passion
+                                    pour <span>résolution créative de problèmes
+                      nouveautés</span> réflexion prospective
+                                    limites des marques</p>
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3">
+                            <div class="service__top-btn">
+                                <div class="btn_wrapper">
+                                    <a href="" class="btn-item wc-btn-secondary btn-hover"><span></span> Consulter <br>tous
+                                        nos services <i class="fa-solid fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="service__list-wrapper">
+                        <div class="row">
+                            <div class="col-xxl-4 col-xl-4 col-lg-0 col-md-0">
+                                <div class="service__img-wrapper">
+                                    <img src="{{ asset('assets/imgs/filiale/industry.png') }}" alt="Filiale 1 image" class="service__img img-1 active">
+                                    <img src="{{ asset('assets/imgs/filiale/print.png') }}" alt="Filiale 2 image" class="service__img img-2">
+                                    <img src="{{ asset('assets/imgs/filiale/school.png') }}" alt="Filiale 3 image" class="service__img img-3">
+                                    <img src="{{ asset('assets/imgs/filiale/school.png') }}" alt="Filiale 4 image" class="service__img img-4">
+                                    <img src="{{ asset('assets/imgs/filiale/communication.png') }}" alt="Filiale 4 image" class="service__img img-4">
+
+                                    <span class="shape-box-1 bg-primary current"></span>
+                                    <span class="shape-box-2 bg-primary"></span>
+                                    <span class="shape-box-3 bg-primary"></span>
+                                    <span class="shape-box-4 bg-primary"></span>
+                                </div>
+                            </div>
+                            <div class="col-xxl-8 col-xl-8 col-lg-12 col-md-12">
+                                <div class="service__list">
+                                    <a href="service-details.html">
+                                        <div class="service__item animation_home1_service" data-service="1">
+                                            <div class="service__number"><span>01</span></div>
+                                            <div class="service__title-wrapper">
+                                                <h4 class="service__title">Industrie</h4>
+                                            </div>
+                                            <div class="service__text">
+                                                <p><i class="fa fa-check-circle" aria-hidden="true"></i> Solutions de construction et de forage (BTP)<p><br>
+                                                <p><i class="fa fa-check-circle" aria-hidden="true"></i> Réalisation de projets d'infrastructure<p><br>
+                                                <p><i class="fa fa-check-circle" aria-hidden="true"></i> Maintenance et assistance technique pour les projets de forage<p>
+                                            </div>
+                                            <div class="service__link">
+                                                <p><i class="fa-solid fa-arrow-right"></i></p>
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                    <a href="service-details.html">
+                                        <div class="service__item animation_home1_service" data-service="2">
+                                            <div class="service__number"><span>02</span></div>
+                                            <div class="service__title-wrapper">
+                                                <h4 class="service__title">Print</h4>
+                                            </div>
+                                            <div class="service__text">
+                                                <p><i class="fa fa-check-circle" aria-hidden="true"></i> Impression numérique et offset<p><br>
+                                                <p><i class="fa fa-check-circle" aria-hidden="true"></i> Conception graphique et design<p><br>
+                                                <p><i class="fa fa-check-circle" aria-hidden="true"></i> Production de supports de communication (flyers, affiches, brochures)<p>
+                                            </div>
+                                            <div class="service__link">
+                                                <p><i class="fa-solid fa-arrow-right"></i></p>
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                    <a href="service-details.html">
+                                        <div class="service__item animation_home1_service" data-service="3">
+                                            <div class="service__number"><span>03</span></div>
+                                            <div class="service__title-wrapper">
+                                                <h4 class="service__title">School</h4>
+                                            </div>
+                                            <div class="service__text">
+                                                <p><i class="fa fa-check-circle" aria-hidden="true"></i> Conception et fabrication d'uniformes scolaires<p><br>
+                                                <p><i class="fa fa-check-circle" aria-hidden="true"></i> Gestion des commandes pour établissements scolaires<p><br>
+                                                <p><i class="fa fa-check-circle" aria-hidden="true"></i> Collaboration avec écoles et institutions locales<p>
+                                            </div>
+                                            <div class="service__link">
+                                                <p><i class="fa-solid fa-arrow-right"></i></p>
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                    <a href="service-details.html">
+                                        <div class="service__item animation_home1_service" data-service="4">
+                                            <div class="service__number"><span>04</span></div>
+                                            <div class="service__title-wrapper">
+                                                <h4 class="service__title">RSE</h4>
+                                            </div>
+                                            <div class="service__text">
+                                                <p><i class="fa fa-check-circle" aria-hidden="true"></i> Initiatives sociales et environnementales<p><br>
+                                                <p><i class="fa fa-check-circle" aria-hidden="true"></i> Projets de développement communautaire<p><br>
+                                                <p><i class="fa fa-check-circle" aria-hidden="true"></i> Programmes de formation et d’emploi pour les jeunes<p>
+                                            </div>
+                                            <div class="service__link">
+                                                <p><i class="fa-solid fa-arrow-right"></i></p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="service-details.html">
+                                        <div class="service__item animation_home1_service" data-service="5">
+                                            <div class="service__number"><span>05</span></div>
+                                            <div class="service__title-wrapper">
+                                                <h4 class="service__title">Communication</h4>
+                                            </div>
+                                            <div class="service__text">
+                                                <p><i class="fa fa-check-circle" aria-hidden="true"></i> Conseil en communication et stratégie de marque<p><br>
+                                                <p><i class="fa fa-check-circle" aria-hidden="true"></i> Organisation d'événements et relations publiques<p><br>
+                                                <p><i class="fa fa-check-circle" aria-hidden="true"></i> Gestion des réseaux sociaux et campagnes publicitaires<p>
+                                            </div>
+                                            <div class="service__link">
+                                                <p><i class="fa-solid fa-arrow-right"></i></p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Service area end -->
+
+            <!-- Portfolio area start -->
+            <section class="portfolio__area pb-140">
+                <div class="container">
+                    <div class="row top_row">
+
+                        <h2 class="portfolio__text">Nos réalisations</h2>
+                        <div class="portfolio__list-1">
+                            {% for realisation in all_realisations %}
+                                <div class="portfolio__item">
+                                    <a href="{{ path('app_portfolio_detail', {'slug':realisation.slug}) }}">
+
+                                        {% for image in realisation.images %}
+                                            {% if image.dimension == 'affiche' %}
+                                                <img class="mover" src="{{ asset('uploads/realisations/' ~ image.image) }}"
+                                                     alt="Portfolio Image">
+                                            {% endif %}
+
+                                        {% endfor %}
+
+                                    </a>
+                                    <div class="portfolio__info">
+                                        <h3 class="portfolio__title">{{ realisation.client }}</h3>
+                                        <p>{{ realisation.deliveryAt|date('d/m/Y') }}</p>
+                                    </div>
+                                </div>
+                            {% endfor %}
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+            <!-- Portfolio area end -->
+
+            <!-- Roll area start -->
+            <section class="roll__area-3">
+                <div dir="rtl" class="swiper roll__slider">
+                    <div class="swiper-wrapper roll__wrapper">
+
+                        {% for realisation in all_realisations %}
+
+                        <div class="swiper-slide roll__slide ">
+                            <h2>{{realisation.title}}</h2>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+            <!-- Roll area end -->
+
+
+            <!-- Brand area start -->
+            {% include 'brand/brand.html.twig.html' %}
+            <!-- Brand area end -->
+
+
+            -
+
+            <!-- CTA area start -->
+            <section class="cta__area-2">
+                <div class="container line pt-130 pb-120">
+                    <div class="line-3"></div>
+                    <div class="row">
+                        <div class="col-xxl-12">
+                            <div class="cta__content-2">
+                                <p class="cta__sub-title-2 title-anim">Avez-vous un projet en tête ?</p>
+                                <h2 class="cta__title-2 title-anim">Créons quelque chose
+                                    d'exceptionnel ensemble !</h2>
+                                <div class="btn_wrapper">
+                                    <a href="contact.html" class="wc-btn-pink btn-hover btn-item"><span></span>Contactez <br>nous <i
+                                                class="fa-solid fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA area end -->
+
+            <!-- Testimonial area start -->
+            <section class="testimonial__area">
+                <div class="container g-0 line">
+                    <span class="line-3"></span>
+                    <div class="row">
+                        <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-8">
+                            <div class="testimonial__wrapper">
+                                <div class="testimonial__item item-1">
+                                    <div class="button modal-trigger">
+                                        <div class="testimonial__img b-right">
+                                            <img src="{{ asset('assets/imgs/testimonial/1/1_copie.png') }}" alt="Image Témoignage">
+                                        </div>
+
+                                        <h2 class="testimonial__title">Jes Sherlock</h2>
+                                        <h3 class="testimonial__role">Responsable, Oitaka</h3>
+                                    </div>
+                                </div>
+                                <div class="sec-title-wrapper text-anim">
+                                    <h4 class="sec-sub-title">Témoignages</h4>
+                                    <h5 class="sec-title title-anim">Retour <br>des clients</h5>
+                                    <p>Nos clients satisfaits nous donnent des retours impactants et positifs sur nos services, notre support client, etc.</p>
+                                </div>
+                            </div>
+
+                            <div class="testimonial__item item-2">
+                                <div class="button modal-trigger-2">
+                                    <div class="testimonial__img b-left">
+                                        <img src="{{ asset('assets/imgs/testimonial/1/3_copie.png') }}" alt="Image Témoignage">
+                                    </div>
+
+                                    <h2 class="testimonial__title">Th ISS</h2>
+                                    <h3 class="testimonial__role">Responsable, Tech</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4">
+                            <div class="testimonial__item item-3 img-">
+                                <div class="button modal-trigger-3">
+                                    <div class="testimonial__img b-left">
+                                        <img src="{{ asset('assets/imgs/testimonial/1/2_copie.png') }}" alt="Image Témoignage">
+                                    </div>
+
+                                    <h2 class="testimonial__title">Adam Smith</h2>
+                                    <h3 class="testimonial__role">Responsable, Oitaka</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Testimonial area end -->
+
+
+
+
+            <!-- Blog area start -->
+            <section class="blog__area-2 blog__animation">
+                <div class="container g-0 pt-150 pb-110">
+                    <div class="row">
+
+                        <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4">
+                            <div class="sec-title-wrapper">
+                                <h2 class="sec-title title-anim">Notre actualité</h2>
+                            </div>
+                        </div>
+                        <div class="col-xxl-4 col-xl-4 col-lg-5 col-md-4">
+                            <div class="sec-text text-anim">
+                                <p>Découvrez nos dernières actualités et les initiatives stratégiques menées à travers nos différentes entités.</p>.</p>
+                            </div>
+                        </div>
+                        <div class="col-xxl-4 col-xl-4 col-lg-3 col-md-4">
+                            <div class="sec-btn btn_wrapper">
+                                <a href="blog.html" class="wc-btn-pink btn-hover btn-item"><span></span> Lire <br>tous les articles <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        {% for blog_article in all_articles %}
+                            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4">
+                                <article class="blog__item-2">
+                                    <div class="blog__img-wrapper">
+                                        <a href="{{ path('app_article_detail', { slug: blog_article.slug }) }}">
+                                            <div class="img-box">
+                                                <img class="image-box__item" src="{{ asset('uploads/posts/' ~ blog_article.image) }}" alt="{{ blog_article.title }}">
+                                                <img class="image-box__item" src="{{ asset('uploads/posts/' ~ blog_article.image) }}" alt="{{ blog_article.title }}">
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <h4 class="blog__meta-2"><a href="">{{ blog_article.sector }}</a> . {{ blog_article.publishedAt|date('d/m/Y') }}</h4>
+                                    <h5><a href="{{ path('app_article_detail', { slug: blog_article.slug }) }}" class="blog__title-2">{{ blog_article.title |slice(0, 50) ~ '...' }}</a></h5>
+                                </article>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+
+            <!-- Blog area end -->
+        {% endblock %}
+    </main>
+{% endblock %}
+
+
+
+{% block modal_testimonial %}
+
+    <!-- Modal 1 -->
+    <div class="modal__testimonial" id="modal_testimonial">
+        <div class="modal__testimonial-content">
+            <span class="modal__close" id="modal_close"><i class="fa-solid fa-xmark"></i></span>
+            <iframe src="https://www.youtube.com/embed/" title="Testimonial Video"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;" allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+
+    <!-- Modal 2 -->
+    <div class="modal__testimonial" id="modal_testimonial2">
+        <div class="modal__testimonial-content">
+            <span class="modal__close" id="modal_close2"><i class="fa-solid fa-xmark"></i></span>
+            <iframe src="https://www.youtube.com/embed/" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <!-- Modal 3 -->
+    <div class="modal__testimonial" id="modal_testimonial3">
+        <div class="modal__testimonial-content">
+            <span class="modal__close" id="modal_close3"><i class="fa-solid fa-xmark"></i></span>
+            <iframe src="https://www.youtube.com/embed/" allowfullscreen></iframe>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,113 @@
+{% extends 'base.html.twig' %}
+{% block seo %}
+  <title>Contact</title>
+  <meta name="description" content="Be for you home">
+  <meta name="keywords" content="mots-clés, optimisé SEO, exemple">
+{% endblock %}
+
+
+
+
+{% block main %}
+
+
+  <main>
+
+    <!-- Zone de contact début -->
+    <section class="contact__area-6">
+      <div class="container g-0 line pt-120 pb-110">
+        <span class="line-3"></span>
+        <div class="row">
+          <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
+            <div class="sec-title-wrapper">
+              <h2 class="sec-title-2 animation__char_come" style="color: var(--primary)">Entrons en contact</h2>
+            </div>
+          </div>
+          <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
+            <div class="contact__text">
+              <p>Génial ! Nous sommes ravis d'avoir de vos nouvelles et de commencer quelque chose de spécial ensemble. Appelez-nous pour toute question.</p>
+            </div>
+          </div>
+        </div>
+        <div class="row contact__btm">
+          <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-5">
+            <div class="contact__info">
+              <h3 class="sub-title-anim-top animation__word_come"></h3>
+              <ul>
+                <li><a href="tel:+241 74242612">+241 74242612</a></li>
+                <li><a href="mailto:hello@example.com">beforyou111@gmail.com</a></li>
+                <li><span>Institut des Technologies d'Owendo, <br>Owendo, Gabon</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-7">
+            <div class="contact__form">
+              <form action="assets/mail.php" method="POST">
+                <div class="row g-3">
+                  <div class="col-xxl-6 col-xl-6 col-12">
+                    <input type="text" name="name" placeholder="Nom *">
+                  </div>
+                  <div class="col-xxl-6 col-xl-6 col-12">
+                    <input type="email" name="email" placeholder="Email *">
+                  </div>
+                </div>
+                <div class="row g-3">
+                  <div class="col-xxl-6 col-xl-6 col-12">
+                    <input type="tel" name="phone" placeholder="Téléphone">
+                  </div>
+                  <div class="col-xxl-6 col-xl-6 col-12">
+                    <input type="text" name="subject" placeholder="Sujet *">
+                  </div>
+                </div>
+                <div class="row g-3">
+                  <div class="col-12">
+                    <textarea name="message" placeholder="Message *"></textarea>
+                  </div>
+                </div>
+                <div class="row g-3">
+                  <div class="col-12">
+                    <div class="btn_wrapper">
+                      <button class="wc-btn-primary btn-hover btn-item"><span></span> Envoyer <br>Message <i
+                                class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Zone de contact fin -->
+
+  </main>
+
+
+
+{% endblock %}
+
+
+
+  {% block modal_testimonial %}
+  {% endblock %}
+
+{% block java_script %}
+  {{ parent() }}
+  <script>
+    let header_bg_2 = document.querySelector(".header__area-2");
+    if (header_bg_2) {
+      header_bg_2.style.background = "#071c45";
+      window.onscroll = function () {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          header_bg_2.style.background = "#071c45";
+          header_bg_2.classList.add("sticky-2");
+          if (scroll_top) {
+            scroll_top.style.display = "block";
+          }
+        } else {
+          header_bg_2.style.background = "#071c45";
+        }
+      };
+    }
+  </script>
+{% endblock %}

@@ -1,0 +1,52 @@
+vich_uploader:
+    db_driver: orm
+
+    mappings:
+        posts_image:
+            uri_prefix: /uploads/posts
+            upload_destination: '%kernel.project_dir%/public/uploads/posts'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+            delete_on_update: false
+            delete_on_remove: true
+
+        sections_image:
+            uri_prefix: /uploads/sections
+            upload_destination: '%kernel.project_dir%/public/uploads/sections'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+            delete_on_update: false
+            delete_on_remove: true
+
+        realisation_image:
+            uri_prefix: /uploads/realisations
+            upload_destination: '%kernel.project_dir%/public/uploads/realisations'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+            delete_on_update: false
+            delete_on_remove: true
+
+        subsidiary_image:
+            uri_prefix: /uploads/subsidiary
+            upload_destination: '%kernel.project_dir%/public/uploads/subsidiary'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+            delete_on_update: false
+            delete_on_remove: true
+
+        member_image:
+            uri_prefix: /uploads/team_member
+            upload_destination: '%kernel.project_dir%/public/uploads/team_member'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+            delete_on_update: false
+            delete_on_remove: true
+
+        client_image:
+            uri_prefix: /uploads/testimony
+            upload_destination: '%kernel.project_dir%/public/uploads/testimony'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+            delete_on_update: false
+            delete_on_remove: true
+
+
+
+    #    products:
+    #        uri_prefix: /images/products
+    #        upload_destination: '%kernel.project_dir%/public/images/products'
+    #        namer: Vich\UploaderBundle\Naming\SmartUniqueNamer

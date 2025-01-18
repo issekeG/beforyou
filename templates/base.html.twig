@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% block head %}
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% block seo %}
+    <title>Be for you</title>
+    <meta name="description" content="Axtra HTML5 Template">
+    <meta name="keywords" content="mots-clés, optimisé SEO, exemple">
+  {% endblock %}
+
+  <!-- Fav Icon -->
+  <link rel="icon" type="image/x-icon" href="{{ asset('assets/imgs/logo/be_for_you_logo.jpeg') }}">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- All CSS files -->
+  <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/all.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/swiper-bundle.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/progressbar.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/meanmenu.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/master.css') }}">
+</head>
+{% endblock %}
+
+<body>
+  <!-- Cursor Animation -->
+  <div class="cursor1"></div>
+  <div class="cursor2"></div>
+
+  <!-- Switcher Area Start -->
+  <div class="switcher__area">
+    <div class="switcher__icon">
+      <button id="switcher_open"><i class="fa-solid fa-gear"></i></button>
+      <button id="switcher_close"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <div class="switcher__items">
+      <div class="switcher__item">
+        <div class="switch__title-wrap">
+          <h2 class="switcher__title">Cursor</h2>
+        </div>
+        <div class="switcher__btn">
+          <label for="cursor_style">Choisissez un style de curseur :</label>
+          <select name="cursor-style" id="cursor_style">
+            <option value="1">default</option>
+            <option selected value="2">animated</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="switcher__item">
+        <div class="switch__title-wrap">
+          <h2 class="switcher__title">mode</h2>
+        </div>
+        <div class="switcher__btn mode-type wc-col-2">
+          <button class="active" data-mode="light">light</button>
+          <button data-mode="dark">dark</button>
+        </div>
+      </div>
+
+      <div class="switcher__item">
+        <div class="switch__title-wrap">
+          <h2 class="switcher__title">Language Support</h2>
+        </div>
+        <div class="switcher__btn lang_dir wc-col-2">
+          <button class="active" data-mode="ltr">LTR</button>
+          <button data-mode="rtl">RTL</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Switcher Area End -->
+
+
+
+  <!-- Scroll Smoother -->
+  <div class="has-smooth" id="has_smooth"></div>
+
+
+  <!-- Go Top Button -->
+  <button id="scroll_top" class="scroll-top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  {% block header %}
+  <!-- Header area start -->
+  <header class="header__area-2">
+    <div class="header__inner-2">
+      <div class="header__logo-2">
+        <a href="{{ path('app_home') }}"><img src="{{ asset('assets/imgs/logo/be_for_you_white_2.png') }}" alt="Site Logo"></a>
+      </div>
+      <div class="header__nav-2">
+        <ul class="main-menu menu-anim">
+          <li><a href="{{ path('app_about') }}">A propos</a></li>
+          <li class="has-megamenu"><a href="{{ path('app_activity') }}">Nos activités</a>
+            <ul class="mega-menu">
+              <li>
+                <a>Industrie</a>
+                <ul>
+                  <li><a href="{{ path('app_service_detail', {'slug':'Construction et forage (BTP)'}) }}">Construction et forage (BTP)</a></li>
+                  <li><a href="">Réalisation de projets d'infrastructure</a></li>
+                  <li><a href="">Maintenance et assistance technique pour les projets de forage.</a></li>
+                </ul>
+              </li>
+              <li>
+                <a>Print</a>
+                <ul>
+                  <li><a href="">Impression numérique et offset</a></li>
+                  <li><a href="">Conception graphique et design</a></li>
+                  <li><a href="">Production de supports de communication</a></li>
+                </ul>
+              </li>
+              <li>
+                <a>School</a>
+                <ul>
+                  <li><a href="">Conception et fabrication d'uniformes scolaires</a></li>
+                  <li><a href="">Gestion des commandes pour établissements scolaires</a></li>
+                  <li><a href="">Collaboration avec écoles et institutions locales</a></li>
+                </ul>
+              </li>
+              <li>
+                <a>Be for you RSE</a>
+                <ul>
+                  <li><a href="">Initiatives sociales et environnementales</a></li>
+                  <li><a href="">Projets de développement communautaire</a></li>
+                  <li><a href="">Programmes de formation et d’emploi pour les jeunes</a></li>
+                </ul>
+              </li>
+              <li>
+                <a>Communication</a>
+                <ul>
+                  <li><a href="">Conseil en communication et stratégie de marque</a></li>
+                  <li><a href="">Organisation d'événements et relations publiques</a></li>
+                  <li><a href="">Gestion des réseaux sociaux et campagnes publicitaires</a></li>
+                </ul>
+              </li>
+
+            </ul>
+          </li>
+          <li class="has-megamenu"><a href="{{ path('app_portfolio') }}">Nos réalisations</a>
+            <ul class="mega-menu">
+              <li>
+                <a>Industrie</a>
+                <ul>
+                  <li><a href="{{ path('app_realisations_filter',{'slug':'Construction et forage (BTP)'}) }}">Construction et forage (BTP).</a></li>
+                  <li><a href="{{ path('app_realisations_filter',{'slug':'Réalisation de projets d infrastructure'}) }}">Réalisation de projets d'infrastructure</a></li>
+                  <li><a href="{{ path('app_realisations_filter',{'slug':'Maintenance et assistance technique pour les projets de forage'}) }}">Maintenance et assistance technique pour les projets de forage.</a></li>
+                </ul>
+              </li>
+              <li>
+                <a>Print</a>
+                <ul>
+                  <li><a href="{{ path('app_realisations_filter',{'slug':'Impression numérique et offset'}) }}">Impression numérique et offset</a></li>
+                  <li><a href="{{ path('app_realisations_filter',{'slug':'Conception graphique et design'}) }}">Conception graphique et design</a></li>
+                  <li><a href="{{ path('app_realisations_filter',{'slug':'Production de supports de communication'}) }}">Production de supports de communication</a></li>
+                </ul>
+              </li>
+              <li>
+                <a>School</a>
+                <ul>
+                  <li><a href="{{ path('app_realisations_filter',{'slug':'Conception et fabrication d uniformes scolaires'}) }}">Conception et fabrication d'uniformes scolaires</a></li>
+                  <li><a href="{{ path('app_realisations_filter',{'slug':'Gestion des commandes pour établissements scolaires'}) }}">Gestion des commandes pour établissements scolaires</a></li>
+                  <li><a href="{{ path('app_realisations_filter',{'slug':'Collaboration avec écoles et institutions locales'}) }}">Collaboration avec écoles et institutions locales</a></li>
+                </ul>
+              </li>
+              <li>
+                <a>Be for you RSE</a>
+                <ul>
+                  <li><a href="{{ path('app_realisations_filter',{'slug':'Initiatives sociales et environnementales'}) }}">Initiatives sociales et environnementales</a></li>
+                  <li><a href="{{ path('app_realisations_filter',{'slug':'Projets de développement communautaire'}) }}">Projets de développement communautaire</a></li>
+                  <li><a href="{{ path('app_realisations_filter',{'slug':'Programmes de formation et d emploi pour les jeunes'}) }}">Programmes de formation et d’emploi pour les jeunes</a></li>
+                </ul>
+              </li>
+              <li>
+                <a>Communication</a>
+                <ul>
+                  <li><a href="{{ path('app_realisations_filter',{'slug':'Conseil en communication et stratégie de marque'}) }}">Conseil en communication et stratégie de marque</a></li>
+                  <li><a href="{{ path('app_realisations_filter',{'slug':'Organisation d événements et relations publiques'}) }}">Organisation d'événements et relations publiques</a></li>
+                  <li><a href="{{ path('app_realisations_filter',{'slug':'Gestion des réseaux sociaux et campagnes publicitaires'}) }}">Gestion des réseaux sociaux et campagnes publicitaires</a></li>
+                </ul>
+              </li>
+
+            </ul>
+          </li>
+          <li><a href="{{ path('app_blog_index') }}">Blog</a>
+          </li>
+          <li><a href="{{ path('app_contact') }}">Contact</a></li>
+        </ul>
+
+
+      </div>
+      <div class="header__nav-icon-2">
+        <button class="menu-icon-2" id="open_offcanvas"><img src="{{ asset('assets/imgs/icon/menu-white.png') }}"
+            alt="Menubar Icon"></button>
+      </div>
+    </div>
+  </header>
+  <!-- Header area end -->
+  {% endblock %}
+
+
+  <!-- Offcanvas area start -->
+  <div class="offcanvas__area">
+    <div class="offcanvas__body">
+      <div class="offcanvas__left">
+        <div class="offcanvas__logo">
+          <a href="{{ path('app_home') }}"><img src="{{ asset('assets/imgs/logo/be_for_you_white_2.png') }}" alt="Offcanvas Logo"></a>
+        </div>
+        <div class="offcanvas__social">
+          <h3 class="social-title">Suivez nous</h3>
+          <ul>
+            <li><a href="https://www.linkedin.com/company/be-for-you-gabon/" target="_blank">Linkedin</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="https://web.facebook.com/Be4UPrint/" target="_blank">Facebook</a></li>
+            <li><a href="#">YouTube</a></li>
+          </ul>
+        </div>
+        <div class="offcanvas__links">
+          <ul>
+            <li><a href="{{ path('app_about') }}">A propos</a></li>
+            <li><a href="{{ path('app_contact') }}">contact</a></li>
+            <li><a href="{{ path('app_team') }}">Equipe</a></li>
+            <li><a href="{{ path('app_blog_index') }}">blog</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="offcanvas__mid">
+        <div class="offcanvas__menu-wrapper">
+          <nav class="offcanvas__menu">
+            <ul class="menu-anim">
+              <li><a href="">A propos</a>
+              </li>
+              <li><a>Nos activités</a>
+                <ul>
+                  <li>
+                    <a> BE-FOR-YOU Industrie</a>
+                    <ul>
+                      <li><a href="">Construction et forage (BTP).</a></li>
+                      <li><a href="">Réalisation de projets d'infrastructure</a></li>
+                      <li><a href="">Maintenance et assistance technique pour les projets de forage.</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a>BE-FOR-YOU Print</a>
+                    <ul>
+                      <li><a href="">Impression numérique et offset</a></li>
+                      <li><a href="">Conception graphique et design</a></li>
+                      <li><a href="">Production de supports de communication</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a>BE-FOR-YOU School</a>
+                    <ul>
+                      <li><a href="">Conception et fabrication d'uniformes scolaires</a></li>
+                      <li><a href="">Gestion des commandes pour établissements scolaires</a></li>
+                      <li><a href="">Collaboration avec écoles et institutions locales</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a>BE-FOR-YOU RSE</a>
+                    <ul>
+                      <li><a href="">Initiatives sociales et environnementales</a></li>
+                      <li><a href="">Projets de développement communautaire</a></li>
+                      <li><a href="">Programmes de formation et d’emploi pour les jeunes</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a>BE-FOR-YOU Communication</a>
+                    <ul>
+                      <li><a href="">Conseil en communication et stratégie de marque</a></li>
+                      <li><a href="">Organisation d'événements et relations publiques</a></li>
+                      <li><a href="">Gestion des réseaux sociaux et campagnes publicitaires</a></li>
+                    </ul>
+                  </li>
+
+                </ul>
+              </li>
+              <li><a>Nos realisations</a>
+                <ul>
+                  <li>
+                    <a> BE-FOR-YOU Industrie</a>
+                    <ul>
+                      <li><a href="">Construction et forage (BTP).</a></li>
+                      <li><a href="">Réalisation de projets d'infrastructure</a></li>
+                      <li><a href="">Maintenance et assistance technique pour les projets de forage.</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a>BE-FOR-YOU Print</a>
+                    <ul>
+                      <li><a href="">Impression numérique et offset</a></li>
+                      <li><a href="">Conception graphique et design</a></li>
+                      <li><a href="">Production de supports de communication</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a>BE-FOR-YOU School</a>
+                    <ul>
+                      <li><a href="">Conception et fabrication d'uniformes scolaires</a></li>
+                      <li><a href="">Gestion des commandes pour établissements scolaires</a></li>
+                      <li><a href="">Collaboration avec écoles et institutions locales</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a>BE-FOR-YOU RSE</a>
+                    <ul>
+                      <li><a href="">Initiatives sociales et environnementales</a></li>
+                      <li><a href="">Projets de développement communautaire</a></li>
+                      <li><a href="">Programmes de formation et d’emploi pour les jeunes</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a>BE-FOR-YOU Communication</a>
+                    <ul>
+                      <li><a href="">Conseil en communication et stratégie de marque</a></li>
+                      <li><a href="">Organisation d'événements et relations publiques</a></li>
+                      <li><a href="">Gestion des réseaux sociaux et campagnes publicitaires</a></li>
+                    </ul>
+                  </li>
+
+                </ul>
+              </li>
+              <li><a href="{{path('app_blog_index')}}">blog</a>
+              </li>
+              <li><a href="{{ path('app_contact') }}">contact</a></li>
+              <li><a href="{{ path('app_team') }}">Equipe</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="offcanvas__right">
+        <div class="offcanvas__search">
+          <form action="#">
+            <input type="text" name="search" placeholder="Search keyword" id="input_search_field">
+            <label for="input_search_field"></label>
+            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+          </form>
+        </div>
+        <div class="offcanvas__contact">
+          <h3>Contactez-nous</h3>
+          <ul>
+            <li><a href="tel:02094980547">+241 74242612</a></li>
+            <li><a href="mailto:info@extradesign.com">beforyou111@gmail.com</a></li>
+            <li>Institut des Technologies d'Owendo, Owendo, Gabon</li>
+          </ul>
+        </div>
+        <img src="{{ asset('assets/imgs/shape/11.png') }}" alt="shape" class="shape-1">
+        <img src="{{ asset('assets/imgs/shape/12.png') }}" alt="shape" class="shape-2">
+      </div>
+      <div class="offcanvas__close">
+        <button type="button" id="close_offcanvas"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+    </div>
+  </div>
+  <!-- Offcanvas area end -->
+
+
+  <div id="smooth-wrapper">
+    <div id="smooth-content">
+      {% block main %}
+      {% endblock %}
+
+
+      {% block footer %}
+        <!-- Footer area start -->
+        <footer class="footer__area">
+          <div class="footer__top">
+            <div class="container footer-line"></div>
+            <img src="{{ asset('assets/imgs/thumb/footer_copie.png') }}" alt="Footer Image" data-speed="0.75">
+          </div>
+
+          <div class="footer__btm" style="background-color: #031633">
+            <div class="container">
+              <div class="row footer__row">
+                <div class="col-xxl-12">
+                  <div class="footer__inner">
+                    <div class="footer__widget">
+                      <img class="footer__logo" src="{{ asset('assets/imgs/logo/footer-logo-white-copie.png') }}" alt="Logo Footer">
+                      <p>Quand fonctionnent-ils bien, et quand agissent-ils sur nous et finalement, quand en avons-nous réellement besoin, et comment pouvons-nous les éviter.</p>
+                      <ul class="footer__social">
+                        <li><a href="#"><span><i class="fa-brands fa-facebook-f"></i></span></a></li>
+                        <li><a href="#"><span><i class="fa-brands fa-twitter"></i></span></a></li>
+                        <li><a href="#"><span><i class="fa-brands fa-instagram"></i></span></a></li>
+                        <li><a href="#"><span><i class="fa-brands fa-linkedin"></i></span></a></li>
+                      </ul>
+                    </div>
+
+                    <div class="footer__widget-2">
+                      <h2 class="footer__widget-title">Informations</h2>
+                      <ul class="footer__link">
+                        <li><a href="{{ path('app_about') }}">À propos de l'entreprise</a></li>
+                        <li><a href="{{ path('app_portfolio') }}">Nos realisations</a></li>
+                        <li><a href="{{ path('app_contact') }}">Carrière</a></li>
+                        <li><a href="{{ path('app_blog_index') }}">Blog</a></li>
+                        <li><a href="{{ path('app_contact') }}">Contact</a></li>
+                      </ul>
+                    </div>
+
+                    <div class="footer__widget-3">
+                      <h2 class="footer__widget-title">Contactez-nous</h2>
+                      <ul class="footer__contact">
+                        <li>Institut des Technologies d'Owendo, Owendo, Gabon</li>
+                        <li><a href="tel:02574328301" class="phone">+241 74242612</a></li>
+                        <li><a href="mailto:info@buildyexample.com">beforyou111@gmail.com</a></li>
+                      </ul>
+                    </div>
+
+                    <div class="footer__widget-4">
+                      <h2 class="project-title">Vous avez un projet en tête ?</h2>
+                      <div class="btn_wrapper">
+                        <a href="{{ path('app_contact') }}" class="wc-btn-primary btn-hover btn-item"><span></span> Contactez-nous <i
+                                  class="fa-solid fa-arrow-right"></i></a>
+                      </div>
+                      <h3 class="contact-time">07 : 00 AM - 18 : 30 PM</h3>
+                      <h4 class="contact-day">Lundi - Samedi</h4>
+                    </div>
+
+                    <div class="footer__copyright">
+                      <p>© 2024 - 2025 | Tous droits réservés par <a href="#" target="_blank">AntalaSoft </a></p>
+                    </div>
+
+                    <div class="footer__subscribe">
+                      <form action="#">
+
+                        <input type="email" name="email" placeholder="Entrez votre email" id="footer_email">
+                        <label for="footer_email"></label>
+                        <button type="submit" class="subs-btn"><i class="fa-solid fa-paper-plane"></i></button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </footer>
+        <!-- Footer area end -->
+      {% endblock %}
+
+    </div>
+  </div>
+
+  {% block modal_testimonial %}
+    <!-- Modal 1 -->
+    <div class="modal__testimonial" id="modal_testimonial">
+      <div class="modal__testimonial-content">
+        <span class="modal__close" id="modal_close"><i class="fa-solid fa-xmark"></i></span>
+        <iframe src="https://www.youtube.com/embed/" title="Testimonial Video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;" allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+
+    <!-- Modal 2 -->
+    <div class="modal__testimonial" id="modal_testimonial2">
+      <div class="modal__testimonial-content">
+        <span class="modal__close" id="modal_close2"><i class="fa-solid fa-xmark"></i></span>
+        <iframe src="https://www.youtube.com/embed/" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <!-- Modal 3 -->
+    <div class="modal__testimonial" id="modal_testimonial3">
+      <div class="modal__testimonial-content">
+        <span class="modal__close" id="modal_close3"><i class="fa-solid fa-xmark"></i></span>
+        <iframe src="https://www.youtube.com/embed/" allowfullscreen></iframe>
+      </div>
+    </div>
+
+  {% endblock %}
+
+
+  {% block java_script %}
+  <!-- All JS files -->
+  <script src="{{ asset('assets/js/jquery-3.6.0.min.js') }}"></script>
+  <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ asset('assets/js/swiper-bundle.min.js') }}"></script>
+  <script src="{{ asset('assets/js/counter.js') }}"></script>
+  <script src="{{ asset('assets/js/gsap.min.js') }}"></script>
+  <script src="{{ asset('assets/js/ScrollTrigger.min.js') }}"></script>
+  <script src="{{ asset('assets/js/ScrollToPlugin.min.js') }}"></script>
+  <script src="{{ asset('assets/js/ScrollSmoother.min.js') }}"></script>
+  <script src="{{ asset('assets/js/SplitText.min.js') }}"></script>
+  <script src="{{ asset('assets/js/chroma.min.js') }}"></script>
+  <script src="{{ asset('assets/js/mixitup.min.js') }}"></script>
+  <script src="{{ asset('assets/js/vanilla-tilt.js') }}"></script>
+  <script src="{{ asset('assets/js/jquery.meanmenu.min.js') }}"></script>
+  <script src="{{ asset('assets/js/main.js') }}"></script>
+{% endblock %}
+
+
+
+</body>
+
+</html>

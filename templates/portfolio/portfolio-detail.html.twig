@@ -1,0 +1,142 @@
+
+
+{% extends 'base.html.twig' %}
+{% block seo %}
+  <title>Be for you home</title>
+  <meta name="description" content="Be for you home">
+  <meta name="keywords" content="mots-clés, optimisé SEO, exemple">
+{% endblock %}
+
+
+
+
+{% block main %}
+    <main>
+
+        <!-- Début de la section Portfolio -->
+        <section class="portfolio__detail">
+            <div class="portfolio__detail-top">
+                <div class="container g-0 line pt-110 pb-130">
+                    <span class="line-3"></span>
+
+                    <div class="row pt-100 pt-md-0">
+                        <div class="col-12 col-xxl-8 col-xl-8 col-lg-7 col-md-7 pt-40 pt-md-0">
+                            <div class="sec-title-wrapper">
+                                <h1 class="animation__char_come">{{ realisation.title }}</h1>
+                            </div>
+                        </div>
+
+                        <div class="colo-12 col-xxl-4 col-xl-4 col-lg-5 col-md-5">
+                            <div class="portfolio__detail-info">
+                                <ul>
+                                    <li>Catégorie <a href="">{{ realisation.activity }}</a></li>
+                                    <li>Client <span>{{ realisation.client }}</span></li>
+                                    <li>Date de début <span>{{ realisation.startedAt | date('d-m-y') }}</span></li>
+                                    <li>Livraison <span>{{ realisation.deliveryAt | date('d-m-y') }}</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio__detail-thumb">
+                {% for image in realisation.images %}
+                    {% if image.dimension == 'principale' %}
+                        <img src="{{ asset('uploads/realisations/' ~ image.image) }}"
+                             alt="Portfolio Image" data-speed="auto">
+                    {% endif %}
+                {% endfor %}
+            </div>
+
+            <div class="portfolio__detail-content">
+                <div class="container g-0 line pt-140">
+                    <span class="line-3"></span>
+
+                    <div class="block-content">
+                        <div class="row">
+                            <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-5">
+                                <h2 class="portfolio__detail-title title-anim">{{ realisation.subTitle }}</h2>
+                            </div>
+
+                            <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-7">
+                                <div class="portfolio__detail-text">
+                                    {{ realisation.subTitleDescription | raw }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% for image in realisation.images %}
+                        {% if image.dimension == 'secondaire' %}
+                        <div class="block-thumb">
+                            <img src="{{ asset('uploads/realisations/' ~ image.image) }}" alt="Image Portfolio" data-speed="0.5">
+                        </div>
+                        {% endif %}
+                    {% endfor %}
+
+                    <div class="block-content pt-120">
+                        <div class="row">
+                            <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-5">
+                                <h2 class="portfolio__detail-title title-anim">{{ realisation.subTitle2 }}</h2>
+                            </div>
+
+                            <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-7">
+                                <div class="portfolio__detail-text">
+                                    {{ realisation.secondSubTitleDescription | raw }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block-gallery">
+                        {% for image in realisation.images %}
+                            {% if image.dimension == 'moyenne' %}
+                                <img src="{{ asset('uploads/realisations/' ~ image.image) }}" alt="Image Portfolio">
+                            {% endif %}
+                        {% endfor %}
+
+                    </div>
+
+                    <div class="block-img-text">
+                        {% for image in realisation.images %}
+                            {% if image.dimension == 'petite' %}
+                                <img src="{{ asset('uploads/realisations/' ~ image.image) }}" alt="Image Portfolio">
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Fin de la section Portfolio -->
+
+    </main>
+
+
+{% endblock %}
+
+
+
+  {% block modal_testimonial %}
+  {% endblock %}
+
+ {% block java_script %}
+     {{ parent() }}
+     <script>
+         let header_bg_2 = document.querySelector(".header__area-2");
+         if (header_bg_2) {
+             header_bg_2.style.background = "#071c45";
+             window.onscroll = function () {
+                 if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                     header_bg_2.style.background = "#071c45";
+                     header_bg_2.classList.add("sticky-2");
+                     if (scroll_top) {
+                         scroll_top.style.display = "block";
+                     }
+                 } else {
+                     header_bg_2.style.background = "#071c45";
+                 }
+             };
+         }
+     </script>
+ {% endblock %}
+

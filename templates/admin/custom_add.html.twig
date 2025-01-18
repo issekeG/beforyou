@@ -1,0 +1,12 @@
+{% extends '@EasyAdmin/crud/edit.html.twig' %}
+
+{% block configured_stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('assets/vendor/ckeditor5.css') }}">
+{% endblock %}
+{% block configured_javascripts %}
+    {{ parent() }}
+
+        <script src="{{ asset('assets/vendor/ckeditor5.js') }}">
+        </script>
+{% endblock %}

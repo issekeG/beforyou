@@ -1,0 +1,106 @@
+{% extends 'base.html.twig' %}
+{% block seo %}
+  <title>Be for you home</title>
+  <meta name="description" content="Be for you home">
+  <meta name="keywords" content="mots-clés, optimisé SEO, exemple">
+{% endblock %}
+
+
+
+
+{% block main %}
+      <main>
+        <div class="team__detail-page">
+          <!-- <span class="line-1"></span>
+          <span class="line-2"></span>
+          <span class="line-3"></span> -->
+
+
+          <!-- Team area start -->
+          <section class="team__detail mt-md-5">
+            <div class="container line pb-140">
+              <div class="line-3"></div>
+              <div class="row mt-md-5">
+                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-8 offset-lg-0 offset-md-2">
+                  <div class="team__member-img">
+                    <img src="{{ asset('uploads/team_member/' ~ member.photo) }}" alt="Team Member Picture" data-speed="0.5">
+                  </div>
+                </div>
+                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12">
+                  <div class="sec-title-wrapper pt-120">
+                    <h2 class="team__member-name-7 animation__char_come">{{ member.firstname}} <br>{{ member.name }}</h2>
+                    <h3 class="team__member-role-7 animation__char_come">{{ member.role }}, à
+                      <span>Be for you</span>
+                    </h3>
+                    <div>
+                      {{ member.description | raw }}
+                    </div>
+                  </div>
+                  <div class="team__member-social">
+                    <h4 class="work-title">Réseaux sociaux :</h4>
+                    <ul>
+                      <li><a href="#" target="_blank"><span><i class="fa-brands fa-facebook-f"></i></span></a></li>
+                      <li><a href="#" target="_blank"><span><i class="fa-brands fa-twitter"></i></span></a></li>
+                      <li><a href="#" target="_blank"><span><i class="fa-brands fa-linkedin"></i></span></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Team area end -->
+
+
+          <!-- CTA area start -->
+          <section class="cta__area">
+            <div class="container line pt-130 pb-110">
+              <div class="line-3"></div>
+              <div class="row">
+                <div class="col-xxl-12">
+                  <div class="cta__content">
+                    <p class="cta__sub-title">Travaillez avec nous</p>
+                    <h2 class="cta__title title-anim">Nous serions ravis d'en savoir plus sur votre projet</h2>
+                    <div class="btn_wrapper">
+                      <a href="{{ path('app_contact') }}" class="wc-btn-primary btn-item btn-hover">
+                        <span></span>Discutons <br>ensemble <i class="fa-solid fa-arrow-right"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- CTA area end -->
+
+
+        </div>
+      </main>
+
+{% endblock %}
+
+
+
+{% block modal_testimonial %}
+{% endblock %}
+
+ {% block java_script %}
+   {{ parent() }}
+   <script>
+     let header_bg_2 = document.querySelector(".header__area-2");
+     if (header_bg_2) {
+       header_bg_2.style.background = "#071c45";
+       window.onscroll = function () {
+         if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+           header_bg_2.style.background = "#071c45";
+           header_bg_2.classList.add("sticky-2");
+           if (scroll_top) {
+             scroll_top.style.display = "block";
+           }
+         } else {
+           header_bg_2.style.background = "#071c45";
+         }
+       };
+     }
+   </script>
+ {% endblock %}

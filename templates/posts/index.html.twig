@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Posts index{% endblock %}
+
+{% block body %}
+    <h1>Posts index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Content</th>
+                <th>Image</th>
+                <th>Author</th>
+                <th>ReadTime</th>
+                <th>PublishedAt</th>
+                <th>Keywords</th>
+                <th>SeoDescription</th>
+                <th>SeoTitle</th>
+                <th>Slug</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for post in posts %}
+            <tr>
+                <td>{{ post.id }}</td>
+                <td>{{ post.title }}</td>
+                <td>{{ post.content }}</td>
+                <td>{{ post.image }}</td>
+                <td>{{ post.author }}</td>
+                <td>{{ post.readTime }}</td>
+                <td>{{ post.publishedAt ? post.publishedAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ post.keywords }}</td>
+                <td>{{ post.seoDescription }}</td>
+                <td>{{ post.seoTitle }}</td>
+                <td>{{ post.slug }}</td>
+                <td>
+                    <a href="{{ path('app_posts_show', {'id': post.id}) }}">show</a>
+                    <a href="{{ path('app_posts_edit', {'id': post.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="12">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_posts_new') }}">Create new</a>
+{% endblock %}

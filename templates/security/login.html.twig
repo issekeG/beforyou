@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Log in!{% endblock %}
+
+{% block main %}
+    <div class="d-flex justify-content-center align-items-center vh-100 bg-light">
+        <div class="py-5 my-5 col-12 text-white">
+            <form method="post" class="mx-auto w-50">
+                {% if error %}
+                    <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                {% endif %}
+
+                {% if app.user %}
+                    <div class="mb-3">
+                        You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+                    </div>
+                {% endif %}
+
+                <h1 class="h3 mb-3 font-weight-normal" style="color: var(--primary)">Page d'authentification</h1>
+                <div class="my-4">
+                    <label for="username" class="my-2" style="color: var(--primary)">Votre email</label>
+                    <input type="email" value="{{ last_username }}" name="_username" id="username" class="form-control" autocomplete="email" required autofocus>
+                </div>
+                <div>
+                    <label for="password" class="my-2" style="color: var(--primary)">Mot de passe</label>
+                    <input type="password" name="_password" id="password" class="form-control" autocomplete="current-password" required>
+                </div>
+
+
+                <input type="hidden" name="_csrf_token"
+                       value="{{ csrf_token('authenticate') }}"
+                >
+
+                <button class="btn btn-lg btn-primary my-5" type="submit" style="background-color: var(--primary)">
+                    S'authentifier
+                </button>
+            </form>
+        </div>
+    </div>
+
+
+{% endblock %}
+  {% block modal_testimonial %}
+  {% endblock %}
+
+{% block java_script %}
+    {{ parent() }}
+    <script>
+        let header_bg_2 = document.querySelector(".header__area-2");
+        if (header_bg_2) {
+            header_bg_2.style.background = "#071c45";
+            window.onscroll = function () {
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    header_bg_2.style.background = "#071c45";
+                    header_bg_2.classList.add("sticky-2");
+                    if (scroll_top) {
+                        scroll_top.style.display = "block";
+                    }
+                } else {
+                    header_bg_2.style.background = "#071c45";
+                }
+            };
+        }
+    </script>
+{% endblock %}

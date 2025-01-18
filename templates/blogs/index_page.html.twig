@@ -1,0 +1,77 @@
+{% extends 'base.html.twig' %}
+{% block seo %}
+  <title>Be for you home</title>
+  <meta name="description" content="Be for you home">
+  <meta name="keywords" content="mots-clés, optimisé SEO, exemple">
+{% endblock %}
+
+
+
+
+{% block main %}
+
+
+      <main>
+        <!-- Blog area start -->
+        <section class="blog__area-6 blog__animation">
+          <div class="container g-0 pt-110 pb-110">
+            <span class="line-3"></span>
+            <div class="row pb-130">
+              <div class="col-xxl-8 col-xl-7 col-lg-6 col-md-6">
+                <div class="sec-title-wrapper">
+                  <h2 class="sec-title-2 animation__char_come">L'actualité</h2>
+                </div>
+              </div>
+              <div class="col-xxl-4 col-xl-5 col-lg-6 col-md-6 mb-0">
+                <div class="blog__text mb-0">
+                  <div class="offcanvas__search py-md-0 py-5 col-12">
+                    <form action="#" class="my-0 py-0 w-100">
+                      <input type="text" name="search" placeholder="Search keyword">
+                      <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row reset-grid">
+
+              {% for article in all_articles %}
+              <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4">
+                <article class="blog__item">
+                  <div class="blog__img-wrapper">
+                    <a href="{{ path('app_article_detail', { slug: article.slug }) }}">
+                      <div class="img-box">
+                        {% if article.image %}
+                        <img class="image-box__item" src="{{ asset('uploads/posts/' ~ article.image) }}" alt="{{ article.title }}">
+                        <img class="image-box__item" src="{{ asset('uploads/posts/' ~ article.image) }}" alt="{{ article.title }}">
+
+                        {% else %}
+                          <img class="image-box__item" src="{{ asset('assets/imgs/blog/1.jpg') }}" alt="BLog Thumbnail">
+                        {% endif %}
+                      </div>
+                    </a>
+                  </div>
+                  <h4 class="blog__meta"><a href="">{{ article.sector }}</a> {{ article.publishedAt|date('d/m/Y') }}</h4>
+                  <h5><a href="{{ path('app_article_detail', { slug: article.slug }) }}" class="blog__title">{{ article.title }}</a></h5>
+                  <a href="{{ path('app_article_detail', { slug: article.slug }) }}" class="blog__btn">Lire plus...<span><i
+                        class="fa-solid fa-arrow-right"></i></span></a>
+                </article>
+              </div>
+              {% endfor %}
+
+
+            </div>
+          </div>
+        </section>
+        <!-- Blog area end -->
+
+
+      </main>
+
+{% endblock %}
+
+
+
+{% block modal_testimonial %}
+{% endblock %}

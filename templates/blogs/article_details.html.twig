@@ -1,0 +1,144 @@
+
+{% extends 'base.html.twig' %}
+{% block seo %}
+  <title>Be for you home</title>
+  <meta name="description" content="Be for you home">
+  <meta name="keywords" content="mots-clés, optimisé SEO, exemple">
+{% endblock %}
+
+
+
+
+{% block main %}
+      <main>
+
+        <!-- Blog detail start -->
+        <section class="blog__detail">
+          <div class="container g-0 line pt-140">
+            <span class="line-3"></span>
+            <div class="row">
+              <div class="col-xxl-8 col-xl-10 offset-xxl-2 offset-xl-1">
+                <div class="blog__detail-top">
+                  <h2 class="blog__detail-date animation__word_come"><a href="{{ path('app_blog_index') }}">Retour au menu blog</a> <span>{{ article.publishedAt|date('d/m/Y') }}</span></h2>
+                  <h3 class="blog__detail-title animation__word_come">
+                    {{ article.title }}
+                  </h3>
+                  <div class="blog__detail-metalist">
+                    <div class="blog__detail-meta">
+                      <!-- <img src="assets/imgs/blog/detail/author.png" alt="Author Picture"> -->
+                      <p>Rédacteur <span>{{ article.author }}</span></p>
+                    </div>
+                    <div class="blog__detail-meta">
+                      <p>Temps de lecture <span>{{ article.readTime }} min</span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-8">
+                <div class="blog__detail-thumb">
+                  <img src="{{ asset('uploads/posts/' ~ article.image) }}" alt="Blog Thumbnail" data-speed="0.5">
+                </div>
+              </div>
+
+              <div class="col-xxl-8 col-xl-10 offset-xxl-2 offset-xl-1">
+                <div class="blog__detail-content">
+                  <p>
+                    {{ article.content|raw }}
+                  </p>
+
+                  {% for section in article.sections %}
+                  <h2>{{ section.title }}</h2>
+                  <p>
+                    {{ section.content|raw }}
+                  </p>
+                  <img src="{{ asset('uploads/sections/' ~ section.photo) }}" alt="Blog Image">
+                  {% endfor %}
+                </div>
+                <div class="blog__detail-tags">
+                  <p class="sub-title-anim">
+                    tags:
+                    {% for tag in article.tags %}
+                      <a href="">{{ tag.name }}</a>
+                    {% endfor %}
+
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Blog detail end -->
+
+
+        <!-- Related blog start -->
+        <section class="blog__related blog__animation">
+          <div class="container g-0 line pt-130 pb-140">
+            <span class="line-3"></span>
+            <div class="row">
+              <div class="col-xxl-12">
+                <div class="sec-title-wrapper">
+                  <h2 class="sec-title title-anim">Articles connexes
+                  </h2>
+                </div>
+              </div>
+            </div>
+
+            <div class="row reset-grid">
+              {% for related_article in related_articles %}
+                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4">
+                  <article class="blog__item">
+                    <div class="blog__img-wrapper">
+                      <a href="{{ path('app_article_detail', { slug: related_article.slug }) }}">
+                        <div class="img-box">
+                          {% if related_article.image %}
+                            <img class="image-box__item" src="{{ asset('uploads/posts/' ~ related_article.image) }}" alt="{{ related_article.title }}">
+                            <img class="image-box__item" src="{{ asset('uploads/posts/' ~ related_article.image) }}" alt="{{ related_article.title }}">
+                          {% else %}
+                            <img class="image-box__item" src="{{ asset('assets/imgs/blog/1.jpg') }}" alt="BLog Thumbnail">
+                          {% endif %}
+                        </div>
+                      </a>
+                    </div>
+                    <h4 class="blog__meta sub-title-anim"><a href="">UI Design</a> . 02 May 2019</h4>
+                    <h5><a href="{{ path('app_article_detail', { slug: related_article.slug }) }}" class="blog__title sub-title-anim text-black">
+                        {{ related_article.title }}
+                      </a></h5>
+                  </article>
+                </div>
+              {% else%}
+                <p>Aucun article</p>
+              {% endfor %}
+            </div>
+          </div>
+        </section>
+        <!-- Related blog end -->
+
+      </main>
+
+{% endblock %}
+
+
+
+{% block modal_testimonial %}
+{% endblock %}
+
+{% block java_script %}
+  {{ parent() }}
+  <script>
+    let header_bg_2 = document.querySelector(".header__area-2");
+    if (header_bg_2) {
+      header_bg_2.style.background = "#071c45";
+      window.onscroll = function () {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          header_bg_2.style.background = "#071c45";
+          header_bg_2.classList.add("sticky-2");
+          if (scroll_top) {
+            scroll_top.style.display = "block";
+          }
+        } else {
+          header_bg_2.style.background = "#071c45";
+        }
+      };
+    }
+  </script>
+{% endblock %}

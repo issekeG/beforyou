@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+
+      {% block main %}
+          <main>
+
+              <!-- Error page start -->
+              <section class="error__page">
+                  <div class="container line">
+                      <span class="line-3"></span>
+                      <div class="row">
+                          <div class="col-xxl-12">
+                              <div class="error__content">
+                                  <img src="{{ asset('assets/imgs/thumb/404.png') }}" alt="Page introuvable">
+                                  <h2>Désolé ! Page introuvable</h2>
+                                  <p>La page que vous recherchez n'existe pas ou a été déplacée</p>
+                                  <div class="btn_wrapper">
+                                      <a href="{{ path('app_home') }}" class="wc-btn-primary btn-hover btn-item"><span></span> Retour à <br>l'Accueil <i
+                                                  class="fa-solid fa-arrow-right"></i></a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+
+              </section>
+              <!-- Error page end -->
+
+          </main>
+
+      {% endblock %}
+
+{% block modal_testimonial %}
+{% endblock %}
+{% block java_script %}
+    {{ parent() }}
+    <script>
+        let header_bg_2 = document.querySelector(".header__area-2");
+        if (header_bg_2) {
+            header_bg_2.style.background = "#071c45";
+            window.onscroll = function () {
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    header_bg_2.style.background = "#071c45";
+                    header_bg_2.classList.add("sticky-2");
+                    if (scroll_top) {
+                        scroll_top.style.display = "block";
+                    }
+                } else {
+                    header_bg_2.style.background = "#071c45";
+                }
+            };
+        }
+    </script>
+{% endblock %}

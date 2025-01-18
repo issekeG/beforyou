@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+{% block seo %}
+  <title>Be for you home</title>
+  <meta name="description" content="Be for you home">
+  <meta name="keywords" content="mots-clés, optimisé SEO, exemple">
+{% endblock %}
+
+
+
+
+{% block main %}
+      <main>
+
+
+        <!-- Team area start -->
+        <section class="team__area-6">
+          <div class="container pt-120">
+            <span class="line-3"></span>
+
+            <div class="row">
+              <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-8 offset-xxl-4 offset-xl-4">
+                <div class="sec-title-wrapper">
+                  <h2 class="sec-title animation__char_come" style="color: white">Equipe Be for You </h2>
+                  <p style="color: floralwhite">Nous sommes une équipe diversifiée qui accorde une grande importance aux détails et aspire à laisser une empreinte dans l'univers grâce à notre expertise.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper team__slider">
+            <div class="swiper-wrapper">
+              {% for member in all_members %}
+                <div class="swiper-slide team__slide">
+                  <a href="{{ path('app_team_detail', {'slug' : member.slug}) }}">
+                    <img src="{{ asset('uploads/team_member/' ~ member.photo) }}" alt="Team Member">
+                    <div class="team__info">
+                      <h4 class="team__member-name-6" style="color: white">{{ member.firstname }} {{ member.name }}</h4>
+                      <h5 class="team__member-role-6">{{ member.role }}</h5>
+                    </div>
+                  </a>
+                </div>
+              {% endfor %}
+
+            </div>
+          </div>
+
+          <div class="container line pt-150">
+            <div class="line-3"></div>
+          </div>
+
+          <div class="team__join-btn">
+            <div class="btn_wrapper">
+              <a href="{{ path('app_contact') }}" class="wc-btn-primary btn-item btn-hover"><span></span> Nous <br>rejoindre
+                <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </section>
+        <!-- Team area end -->
+
+
+
+      </main>
+
+{% endblock %}
+
+
+
+  {% block modal_testimonial %}
+  {% endblock %}
+

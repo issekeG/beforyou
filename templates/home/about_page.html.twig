@@ -1,0 +1,162 @@
+{% extends 'base.html.twig' %}
+
+
+      {% block main %}
+        <main>
+
+          <!-- Début de la zone Héros -->
+          <section class="hero__about">
+            <div class="container g-0">
+              <span class="line-3"></span>
+              <div class="row">
+                <div class="col-xxl-12">
+                  <div class="hero__about-content">
+                    <h1 class="hero-title animation__word_come">Structure spécialisée dans l'imprimerie, l'infographie, la broderie, la couture, la reprographie
+                    </h1>
+                    <div class="hero__about-info">
+                      <div class="hero__about-btn">
+                        <div class="btn_wrapper">
+                          <a href="{{ path('app_contact') }}" class="wc-btn-primary btn-hover btn-item">
+                            <span></span> Nous <br>
+                            Contacter
+                            <i class="fa-solid fa-arrow-right"></i>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="hero__about-text title-anim">
+                        <p>Notre entreprise offre des solutions innovantes et diversifiées, allant de la construction et du forage (BTP) à la conception graphique,
+                          l'impression et la communication stratégique.
+                          Engagés dans la responsabilité sociale, nous menons
+                          des initiatives communautaires et environnementales tout en proposant des
+                          services sur mesure pour répondre aux besoins de nos clients avec expertise
+                          et impact positif.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row hero__about-row">
+                <div class="col-xxl-12">
+                  <div class="hero__about-video">
+                    <video loop muted autoplay playsinline>
+                      <source src="{{ asset('assets/video/presentation.mp4') }}" type="video/mp4">
+                    </video>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Fin de la zone Héros -->
+
+
+          <!-- Début de la zone Histoire -->
+          <section class="story__area">
+            <div class="container g-0 line pt-140">
+              <span class="line-3"></span>
+              <div class="sec-title-wrapper">
+                <div class="from-text">depuis <span>2012</span></div>
+                <div class="row">
+                  <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-5">
+                    <h2 class="sec-sub-title title-anim">Fe for you</h2>
+                    <h3 class="sec-title title-anim">Notre histoire</h3>
+                  </div>
+                  <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-7">
+                    <div class="story__text">
+                      <p>Si vous recherchez des informations sur une entreprise ou un service spécifique au Gabon portant le nom "Be For You", il est possible que des informations supplémentaires soient nécessaires pour vous fournir une réponse précise.</p>
+                      <p>Notre équipe spécialisée de chercheurs, stratèges, designers, et chefs de projet travaille avec des processus rationalisés pour franchir les obstacles organisationnels. Nous traduisons les recherches en solutions en créant des marques réfléchies et unifiées.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3">
+                  <div class="story__img-wrapper">
+                    <img src="{{ asset('assets/imgs/story/1.jpg') }}" alt="Miniature Histoire" class="w-100">
+                  </div>
+                </div>
+                <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-5">
+                  <div class="story__img-wrapper img-anim">
+                    <img src="{{ asset('assets/imgs/story/2.jpg') }}" alt="Miniature Histoire" data-speed="auto">
+                  </div>
+                </div>
+                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4">
+                  <div class="story__img-wrapper">
+                    <img src="{{ asset('assets/imgs/story/3.jpg') }}" alt="Miniature Histoire">
+                    <img src="{{ asset('assets/imgs/story/4.jpg') }}" alt="Miniature Histoire">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Fin de la zone Histoire -->
+
+          <!-- Brand area start -->
+          {% include 'brand/brand.html.twig.html' %}
+          <!-- Brand area end -->
+
+
+          <!-- Début de la zone Compteur -->
+          <section class="counter__area">
+            <div class="container g-0 line pb-140 pt-140">
+              <span class="line-3"></span>
+              <div class="row">
+                <div class="col-xxl-12">
+                  <div class="counter__wrapper-2 counter_animation">
+                    <div class="counter__item-2 counter__anim">
+                      <h2 class="counter__number">25k</h2>
+                      <p>Projets <br>complétés</p>
+                      <span class="counter__border"></span>
+                    </div>
+                    <div class="counter__item-2 counter__anim">
+                      <h2 class="counter__number">8k</h2>
+                      <p>Clients <br>satisfaits</p>
+                      <span class="counter__border"></span>
+                    </div>
+                    <div class="counter__item-2 counter__anim">
+                      <h2 class="counter__number">15</h2>
+                      <p>Années <br>d'expérience</p>
+                      <span class="counter__border"></span>
+                    </div>
+                    <div class="counter__item-2 counter__anim">
+                      <h2 class="counter__number">98</h2>
+                      <p>Récompenses <br>reçues</p>
+                      <span class="counter__border"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Fin de la zone Compteur -->
+
+
+          <!-- Début de la zone Équipe -->
+          <section class="team__area pt-140 pb-140">
+            <div class="sec-title-wrapper">
+              <h2 class="sec-sub-title title-anim">Notre Équipe</h2>
+              <h3 class="sec-title title-anim">Notre méthode</h3>
+            </div>
+            <div class="swiper team__slider">
+              <div class="swiper-wrapper">
+                {% for member in all_members %}
+                <div class="swiper-slide team__slide">
+                  <a href="{{ path('app_team_detail', {'slug':member.slug}) }}">
+                    <img src="{{ asset('uploads/team_member/' ~ member.photo) }}" alt="Membre de l'équipe">
+                    <div class="team__info">
+                      <h4 class="team__member-name">{{ member.firstname }} {{ member.name }}</h4>
+                      <h5 class="team__member-role">{{ member.role }}</h5>
+                    </div>
+                  </a>
+                </div>
+                {% endfor %}
+                <!-- Ajout des autres membres de l'équipe... -->
+              </div>
+            </div>
+          </section>
+          <!-- Fin de la zone Équipe -->
+        </main>
+
+      {% endblock %}
+
+{% block modal_testimonial %}
+{% endblock %}
