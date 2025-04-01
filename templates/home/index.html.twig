@@ -15,39 +15,39 @@
         <!-- Hero area start -->
         <section class="hero__area-2">
             <div class="hero__inner-2">
-                <div class="swiper mySwiper">
+                <div class="swiper mySwiper" id="menu-swiper">
                     <div class="swiper-wrapper">
-                        <!-- Slide 1 -->
-                        <div class="swiper-slide slide-1">
-                            <div class="hero__inner-2-slide">
-                                <div class="sec-title-wrapper" id="slide-1-title">
-                                    <h2 class="sec-title-3 bg-shape pb-0"  >Construction <br> Bâtiment</h2>
-                                    <h2 class="sec-title-3" >Partenaire <br>Idéal</h2>
-                                </div>
-                                <div class="hero__text-2">
-                                    <p>
-                                        nous sommes spécialisés dans la conception, la réalisation et la gestion de projets <br><br>
-                                        <i class="fa fa-check-circle" aria-hidden="true"></i> Maison  <i class="fa fa-check-circle" aria-hidden="true"></i> Immeubles <i class="fa fa-check-circle" aria-hidden="true"></i> Usines  <i class="fa fa-check-circle" aria-hidden="true"></i> Bureaux <i class="fa fa-check-circle" aria-hidden="true"></i> Locaux
-                                    </p>
-                                    <div class="hero__button btn_wrapper">
-                                        <a href="{{ path('app_activity') }}" class="wc-btn-pink btn-hover btn-item"><span></span>
-                                            Explorez <br> nos services <i class="fa-solid fa-arrow-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+
                         <!-- Slide 2 -->
                         <div class="swiper-slide slide-2">
                             <div class="hero__inner-2-slide">
-                                <div class="sec-title-wrapper" id="slide-2-title">
-                                    <h2 class="sec-title-3 bg-shape">Forage d'eau</h2>
-                                    <h2 class="sec-title-3">. <br>.</h2>
-                                </div>
-                                <div class="hero__text-2">
-                                    <p>Notre bureau d'étude s'assurera d'effectuer tous les contrôles nécessaires afin de nous permettre d'effectuer un travail impécable et de le livrer dans les délais.</p>
-                                    <div class="hero__button btn_wrapper">
-                                        <a href="{{ path('app_activity') }}" class="wc-btn-pink btn-hover btn-item"><span></span>
-                                            Explorez <br> nos services <i class="fa-solid fa-arrow-right"></i></a>
+                                <div class="container py-5" id="slide-2-title">
+                                    <!-- Titre principal -->
+                                    <h1 class="d-inline-block bg-primary text-white px-4 py-2 rounded mb-3 fs-1 fw-bold">
+                                        Gickel OKABI ISSEKE
+                                    </h1>
+
+                                    <!-- Sous-titre -->
+                                    <h2 class="text-primary mb-4 fs-3 fw-light">
+                                        Expert en Solutions Hydrauliques Professionnelles
+                                    </h2>
+
+                                    <!-- Paragraphe descriptif -->
+                                    <p class="lead text-muted mb-5 mx-auto" style="max-width: 700px;">
+                                        Spécialiste du forage hydraulique avec plus de 15 ans d'expérience,
+                                        je propose des solutions sur mesure pour l'accès à l'eau potable
+                                        et les systèmes d'irrigation agricole. Mon approche combine
+                                        expertise technique et respect des normes environnementales.
+                                    </p>
+
+                                    <!-- Groupe de boutons -->
+                                    <div class="d-flex flex-wrap justify-content-center gap-3">
+                                        <a href="{{ path('app_contact') }}" class="btn btn-lg px-4 py-2" style="background-color: var(--primary); color:white">
+                                            <i class="fas fa-envelope me-2"></i>Contactez-nous
+                                        </a>
+                                        <a href="{{ path('app_portfolio') }}" class="btn btn-lg px-4 py-2" style="background-color: var(--primary); color:white">
+                                            <i class="fas fa-briefcase me-2"></i>Voir nos réalisations
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -63,10 +63,7 @@
                                     <p>
                                         Nous proposons des services d'impression numérique et offset de haute qualité, adaptés à vos besoins professionnels et personnels. Que ce soit pour des cartes de visite, brochures, affiches ou tout autre support, nous garantissons des résultats précis et soignés
                                     </p>
-                                    <div class="hero__button btn_wrapper">
-                                        <a href="{{ path('app_activity') }}" class="wc-btn-pink btn-hover btn-item"><span></span>
-                                            Explorez <br> nos services <i class="fa-solid fa-arrow-right"></i></a>
-                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -83,10 +80,7 @@
                                         De la création de logos aux designs personnalisés, nous vous accompagnons pour des
                                         résultats uniques et professionnels.
                                     </p>
-                                    <div class="hero__button btn_wrapper">
-                                        <a href="{{ path('app_activity') }}" class="wc-btn-pink btn-hover btn-item"><span></span>
-                                            Explorez <br> nos services <i class="fa-solid fa-arrow-right"></i></a>
-                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -100,10 +94,7 @@
                                 <div class="hero__text-2">
                                     <p>Nous travaillons en étroite collaboration avec les écoles et institutions locales pour fournir des solutions adaptées à leurs besoins,
                                         qu'il s'agisse d'uniformes scolaires, de supports imprimés ou de conception graphique. </p>
-                                    <div class="hero__button btn_wrapper">
-                                        <a href="{{ path('app_activity') }}" class="wc-btn-pink btn-hover btn-item"><span></span>
-                                            Explorez <br> nos services <i class="fa-solid fa-arrow-right"></i></a>
-                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -117,10 +108,7 @@
                                 <div class="hero__text-2">
                                     <p>Nous concevons et fabriquons des uniformes scolaires alliant confort, qualité et durabilité.
                                         Nos créations sont adaptées aux besoins spécifiques des établissements scolaires pour refléter leur identité avec style et professionnalisme.</p>
-                                    <div class="hero__button btn_wrapper">
-                                        <a href="{{ path('app_activity') }}" class="wc-btn-pink btn-hover btn-item"><span></span>
-                                            Explorez <br> nos services <i class="fa-solid fa-arrow-right"></i></a>
-                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -131,13 +119,7 @@
                                     <h2 class="sec-title-3 bg-shape">Be for <br>You</h2>
                                     <h2 class="sec-title-3">Initiatives <br>RSE</h2>
                                 </div>
-                                <div class="hero__text-2">
-                                    <p></p>
-                                    <div class="hero__button btn_wrapper">
-                                        <a href="{{ path('app_activity') }}" class="wc-btn-pink btn-hover btn-item"><span></span>
-                                            Explorez <br> nos services <i class="fa-solid fa-arrow-right"></i></a>
-                                    </div>
-                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -153,7 +135,7 @@
                             el: ".swiper-pagination",
                         },
                         autoplay: {
-                            delay: 3000,
+                            delay: 50000,
                         },
                         speed: 3000,
                     });
