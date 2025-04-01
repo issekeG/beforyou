@@ -27,11 +27,11 @@ class HomeController extends AbstractController
         $all_testimony =$testimonyRepository->findTop3OrderedByDate();
 
         return $this->render('home/index.html.twig', [
-            'controller_name' => 'HomeController',
             'all_realisations' => $all_realisations,
             'all_subsidiaries' => $all_subsidiaries,
             'all_articles' => $all_articles,
             'all_testimony' => $all_testimony,
+            'title'=>'Accueil'
         ]);
     }
 

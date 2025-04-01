@@ -1,5 +1,12 @@
 {% extends 'base.html.twig' %}
+  {% block seo %}
+    <title>BE-FOR-YOU | Expertise en Industrie, BTP, Communication et Innovation be for you, be for you 241</title>
 
+    <meta name="description" content="be for you 241, be for you, BE-FOR-YOU est une entreprise polyvalente basée à Owendo, spécialisée en industrie, BTP, impression, communication digitale et RSE. Découvrez notre expertise et notre engagement pour l’innovation et le développement.">
+
+    <meta name="keywords" content="be for you 241, be for you, BE-FOR-YOU, entreprise Owendo, industrie, BTP, ingénierie, impression numérique, communication digitale, uniformes scolaires, innovation, stratégie de marque, RSE, développement communautaire">
+
+  {% endblock %}
 
       {% block main %}
         <main>
@@ -11,27 +18,28 @@
               <div class="row">
                 <div class="col-xxl-12">
                   <div class="hero__about-content">
-                    <h1 class="hero-title animation__word_come">Structure spécialisée dans l'imprimerie, l'infographie, la broderie, la couture, la reprographie
+                    <h1 class="hero-title animation__word_come">Présentation de l'entreprise BE-FOR-YOU
                     </h1>
-                    <div class="hero__about-info">
-                      <div class="hero__about-btn">
-                        <div class="btn_wrapper">
-                          <a href="{{ path('app_contact') }}" class="wc-btn-primary btn-hover btn-item">
-                            <span></span> Nous <br>
-                            Contacter
-                            <i class="fa-solid fa-arrow-right"></i>
-                          </a>
-                        </div>
+                    <div class="row">
+                      <div class="col-md-6 py-2 pb-2">
+                        <p class="pb-2" style="color: var(--gray-2)">
+                          BE-FOR-YOU est une entreprise dynamique et polyvalente, basée à Owendo,
+                          qui se distingue par son expertise dans divers secteurs clés.
+                          Spécialisée dans la production d’uniformes scolaires, l’industrie textile,
+                          les travaux de forage et de construction (BTP), ainsi que dans les supports de communication
+                          et la communication digitale,
+                          elle allie tradition et innovation pour répondre aux besoins de ses clients.
+
+                        </p>
                       </div>
-                      <div class="hero__about-text title-anim">
-                        <p>Notre entreprise offre des solutions innovantes et diversifiées, allant de la construction et du forage (BTP) à la conception graphique,
-                          l'impression et la communication stratégique.
-                          Engagés dans la responsabilité sociale, nous menons
-                          des initiatives communautaires et environnementales tout en proposant des
-                          services sur mesure pour répondre aux besoins de nos clients avec expertise
-                          et impact positif.</p>
+                      <div class="col-md-6 py-2">
+                        <p class="pb-2" style="color: var(--gray-2)">
+                          Grâce à son engagement envers l’excellence et sa volonté d’innover, BE-FOR-YOU joue un rôle actif dans la satisfaction de sa clientèle et contribue de manière significative au développement économique local, tout en s’adaptant aux évolutions technologiques et aux défis du marché.
+                        </p>
+
                       </div>
                     </div>
+
                   </div>
                 </div>
               </div>
@@ -54,16 +62,26 @@
             <div class="container g-0 line pt-140">
               <span class="line-3"></span>
               <div class="sec-title-wrapper">
-                <div class="from-text">depuis <span>2012</span></div>
+                <div class="from-text">depuis <span>2018</span></div>
                 <div class="row">
                   <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-5">
-                    <h2 class="sec-sub-title title-anim">Fe for you</h2>
+                    <h2 class="sec-sub-title title-anim">Be for you</h2>
                     <h3 class="sec-title title-anim">Notre histoire</h3>
                   </div>
                   <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-7">
                     <div class="story__text">
-                      <p>Si vous recherchez des informations sur une entreprise ou un service spécifique au Gabon portant le nom "Be For You", il est possible que des informations supplémentaires soient nécessaires pour vous fournir une réponse précise.</p>
-                      <p>Notre équipe spécialisée de chercheurs, stratèges, designers, et chefs de projet travaille avec des processus rationalisés pour franchir les obstacles organisationnels. Nous traduisons les recherches en solutions en créant des marques réfléchies et unifiées.</p>
+                      <p>Fondée en 2018 par M. DJEUNOU IBINGA Daly Marley, un jeune entrepreneur visionnaire et passionné,
+                        BE-FOR-YOU a été créée avec une mission double : proposer des produits et
+                        services de haute qualité tout en contribuant activement au développement communautaire.
+                        Dès ses débuts, l’entreprise s’est distinguée en devenant un acteur clé dans la confection d’uniformes scolaires,
+                        notamment pour le Lycée d’Awendjé, gagnant ainsi la confiance de ses clients.
+                      </p>
+                      <p>
+                        Grâce à son expertise, sa polyvalence et sa capacité à innover,
+                        BE-FOR-YOU a progressivement diversifié ses activités, s’implantant
+                        dans des secteurs stratégiques tels que les supports de
+                        communication et les travaux de forage, consolidant ainsi sa réputation et sa position sur le marché.
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -71,18 +89,18 @@
               <div class="row">
                 <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3">
                   <div class="story__img-wrapper">
-                    <img src="{{ asset('assets/imgs/story/1.jpg') }}" alt="Miniature Histoire" class="w-100">
+                    <img src="{{ asset('assets/imgs/story/11.png') }}" alt="Miniature Histoire" class="w-100">
                   </div>
                 </div>
                 <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-5">
                   <div class="story__img-wrapper img-anim">
-                    <img src="{{ asset('assets/imgs/story/2.jpg') }}" alt="Miniature Histoire" data-speed="auto">
+                    <img src="{{ asset('assets/imgs/story/22.png') }}" alt="Miniature Histoire" data-speed="auto">
                   </div>
                 </div>
                 <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4">
                   <div class="story__img-wrapper">
-                    <img src="{{ asset('assets/imgs/story/3.jpg') }}" alt="Miniature Histoire">
-                    <img src="{{ asset('assets/imgs/story/4.jpg') }}" alt="Miniature Histoire">
+                    <img src="{{ asset('assets/imgs/story/33.png') }}" alt="Miniature Histoire">
+                    <img src="{{ asset('assets/imgs/story/44.png') }}" alt="Miniature Histoire">
                   </div>
                 </div>
               </div>
@@ -91,42 +109,12 @@
           <!-- Fin de la zone Histoire -->
 
           <!-- Brand area start -->
-          {% include 'brand/brand.html.twig.html' %}
+          {% include 'brand/brand.html.twig' %}
           <!-- Brand area end -->
 
 
           <!-- Début de la zone Compteur -->
-          <section class="counter__area">
-            <div class="container g-0 line pb-140 pt-140">
-              <span class="line-3"></span>
-              <div class="row">
-                <div class="col-xxl-12">
-                  <div class="counter__wrapper-2 counter_animation">
-                    <div class="counter__item-2 counter__anim">
-                      <h2 class="counter__number">25k</h2>
-                      <p>Projets <br>complétés</p>
-                      <span class="counter__border"></span>
-                    </div>
-                    <div class="counter__item-2 counter__anim">
-                      <h2 class="counter__number">8k</h2>
-                      <p>Clients <br>satisfaits</p>
-                      <span class="counter__border"></span>
-                    </div>
-                    <div class="counter__item-2 counter__anim">
-                      <h2 class="counter__number">15</h2>
-                      <p>Années <br>d'expérience</p>
-                      <span class="counter__border"></span>
-                    </div>
-                    <div class="counter__item-2 counter__anim">
-                      <h2 class="counter__number">98</h2>
-                      <p>Récompenses <br>reçues</p>
-                      <span class="counter__border"></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
+          {% include 'choose_us/choose.html.twig' %}
           <!-- Fin de la zone Compteur -->
 
 

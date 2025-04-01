@@ -1,8 +1,11 @@
 {% extends 'base.html.twig' %}
 {% block seo %}
-  <title>Be for you home</title>
-  <meta name="description" content="Be for you home">
-  <meta name="keywords" content="mots-clés, optimisé SEO, exemple">
+  <title>Nos Activités - BE-FOR-YOU | Industrie, BTP, Impression et Communication Be for you 241</title>
+
+  <meta name="description" content="Be for you 241 Découvrez les activités de BE-FOR-YOU : industrie, BTP, ingénierie, impression numérique, communication, uniformes scolaires et RSE. Des solutions innovantes pour répondre à vos besoins.">
+
+  <meta name="keywords" content="Be for you 241 BE-FOR-YOU, nos activités, industrie, BTP, ingénierie, impression numérique, impression textile, communication digitale, uniformes scolaires, RSE, innovation, stratégie de marque, développement communautaire">
+
 {% endblock %}
 
 
@@ -39,11 +42,11 @@
           </div>
 
           <div class="solution__shape">
-            <img src="assets/imgs/icon/1.png" alt="Shape Image" class="shape-1">
-            <img src="assets/imgs/icon/2.png" alt="Shape Image" class="shape-2">
-            <img src="assets/imgs/icon/3.png" alt="Shape Image" class="shape-3">
-            <img src="assets/imgs/icon/4.png" alt="Shape Image" class="shape-4">
-            <img src="assets/imgs/icon/5.png" alt="Shape Image" class="shape-5">
+            <img src="{{ asset('assets/imgs/icon/1.png') }}" alt="Shape Image" class="shape-1">
+            <img src="{{ asset('assets/imgs/icon/2.png') }}" alt="Shape Image" class="shape-2">
+            <img src="{{ asset('assets/imgs/icon/3.png') }}" alt="Shape Image" class="shape-3">
+            <img src="{{ asset('assets/imgs/icon/4.png') }}" alt="Shape Image" class="shape-4">
+            <img src="{{ asset('assets/imgs/icon/5.png') }}" alt="Shape Image" class="shape-5">
           </div>
         </section>
         <!-- Hero area end -->
@@ -90,7 +93,7 @@
                           </div>
                           <ul>
                             {% for activity in subsidiaries.activities %}
-                            <li>+ <a href="" style="color: white">{{ activity.name }}</a></li>
+                            <li>+ <a href="{{ path('app_service_detail', {'slug':activity.slug}) }}" style="color: white">{{ activity.name }}</a></li>
                             {% endfor %}
 
                           </ul>
@@ -115,7 +118,7 @@
         <!-- Service area end -->
 
         <!-- Brand area start -->
-        {% include 'brand/brand.html.twig.html' %}
+        {% include 'brand/brand.html.twig' %}
         <!-- Brand area end -->
 
 
@@ -129,7 +132,7 @@
                   <p class="cta__sub-title">Travaillez avec nous</p>
                   <h2 class="cta__title title-anim">Nous serions ravis d'en savoir plus sur votre projet</h2>
                   <div class="btn_wrapper">
-                    <a href="contact.html" class="wc-btn-primary btn-item btn-hover"><span></span>Discutons-en <i
+                    <a href="{{ path('app_contact') }}" class="wc-btn-primary btn-item btn-hover"><span></span>Discutons-en <i
                               class="fa-solid fa-arrow-right"></i></a>
                   </div>
                 </div>

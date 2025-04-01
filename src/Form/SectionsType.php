@@ -21,7 +21,7 @@ class SectionsType extends AbstractType
             ->add('title')
             ->add('content')
 
-            ->add('photoFile', VichImageType::class,['label' => 'Image'])
+            ->add('photoFile', VichImageType::class,['label' => 'Image format (850 * 350)'])
         ;
     }
 
