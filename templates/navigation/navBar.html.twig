@@ -6,9 +6,9 @@
                 <a href="{{ path('app_home') }}"><img src="{{ asset('assets/imgs/logo/be_for_you_white_2.png') }}" alt="Site Logo"></a>
             </div>
             <div class="header__nav-2">
-                <ul class="main-menu menu-anim">
-                    <li><a href="{{ path('app_about') }}">A propos</a></li>
-                    <li class="has-megamenu"><a href="{{ path('app_activity') }}">Nos activités</a>
+                <ul class="main-menu">
+                    <li><a href="{{ path('app_about') }}"><small>A propos</small></a></li>
+                    <li class="has-megamenu"><a href="{{ path('app_activity') }}"><small>Nos activités</small></a>
                         <ul class="mega-menu">
                             <li>
                                 <a>Industrie</a>
@@ -52,7 +52,7 @@
 
                         </ul>
                     </li>
-                    <li class="has-megamenu"><a href="{{ path('app_portfolio') }}">Nos réalisations</a>
+                    <li class="has-megamenu"><a href="{{ path('app_portfolio') }}"><small>Nos réalisations</small></a>
                         <ul class="mega-menu">
                             <li>
                                 <a>Industrie</a>
@@ -96,9 +96,10 @@
 
                         </ul>
                     </li>
-                    <li><a href="{{ path('app_blog_index') }}">Blog</a>
+                    <li><a href="{{ path('app_blog_index') }}"><small>Blog</small></a>
                     </li>
-                    <li><a href="{{ path('app_contact') }}">Contact</a></li>
+                    <li><a href="{{ path('app_formation') }}"><small>Formation</small></a></li>
+                    <li><a href="{{ path('app_contact') }}"><small>Contact</small></a></li>
                 </ul>
 
 

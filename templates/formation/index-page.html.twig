@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+{% block seo %}
+  <title>Contact</title>
+  <meta name="description" content="Be for you home">
+  <meta name="keywords" content="mots-clés, optimisé SEO, exemple">
+{% endblock %}
+
+
+
+
+{% block main %}
+
+
+  <main>
+
+    <!-- Zone de contact début -->
+    <section class="contact__area-6">
+      <div class="container g-0 line pt-120 pb-110">
+        <span class="line-3"></span>
+        <div class="row">
+          <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
+            <div class="sec-title-wrapper">
+              <h2 class="animation__char_come" style="color: var(--primary)">Liste des formations disponible</h2>
+            </div>
+          </div>
+          <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
+            <div class="contact__text">
+              <h4 class="animation__char_come" style="color: var(--primary)">Suivez ce lien pour vous inscrire à la formation de votre choix <a href="{{ path('app_student_new') }}">cliquer ici</a></h4>
+            </div>
+          </div>
+        </div>
+        <div class="row contact__btm">
+          {% for formation in formations %}
+            {% include 'formation/_card.html.twig' with {'formation': formation} %}
+          {% endfor %}
+
+        </div>
+      </div>
+    </section>
+    <!-- Zone de contact fin -->
+
+  </main>
+
+
+
+{% endblock %}
+
+
+
+  {% block modal_testimonial %}
+  {% endblock %}
+
+{% block java_script %}
+  {{ parent() }}
+  <script>
+    let header_bg_2 = document.querySelector(".header__area-2");
+    if (header_bg_2) {
+      header_bg_2.style.background = "#071c45";
+      window.onscroll = function () {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          header_bg_2.style.background = "#071c45";
+          header_bg_2.classList.add("sticky-2");
+          if (scroll_top) {
+            scroll_top.style.display = "block";
+          }
+        } else {
+          header_bg_2.style.background = "#071c45";
+        }
+      };
+    }
+  </script>
+{% endblock %}

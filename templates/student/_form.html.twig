@@ -1,0 +1,142 @@
+{{ form_start(form) }}
+{# Section Formation #}
+<div class="card mb-4">
+    <div class="card-header text-white" style="background-color: var(--primary)">
+        <h5 class="mb-0">Formation</h5>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-12">
+                {{ form_row(form.formation, {
+                    'label': 'Formation souhaitée*',
+                    'attr': {'class': 'form-select', 'required': 'required'},
+                    'placeholder': '-- Choisir une formation --'
+                }) }}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="card mb-4">
+    <div class="card-header text-white" style="background-color: var(--primary)">
+        <h5 class="mb-0">Informations Personnelles</h5>
+    </div>
+    <div class="card-body">
+        <div class="row g-3">
+            <div class="col-md-6">
+                {{ form_row(form.firstname, {
+                    'label': 'Prénom*',
+                    'attr': {'class': 'form-control', 'required': 'required'}
+                }) }}
+            </div>
+
+            <div class="col-md-6">
+                {{ form_row(form.lastname, {
+                    'label': 'Nom*',
+                    'attr': {'class': 'form-control', 'required': 'required'}
+                }) }}
+            </div>
+
+            <div class="col-md-6 mb-4">
+                {{ form_row(form.sex, {
+                    'label': 'Sexe*',
+                    'attr': {
+                        'class': 'form-select',
+                        'required': 'required'
+                    }
+                }) }}
+            </div>
+            <div class="col-md-6 mb-4">
+                {{ form_row(form.schoolLevel, {
+                    'label': 'Niveau scolaire*',
+                    'attr': {'class': 'form-select', 'required': 'required'}
+                }) }}
+            </div>
+
+            <div class="col-md-4">
+                {{ form_row(form.age, {
+                    'label': 'Âge*',
+                    'attr': {'class': 'form-control', 'required': 'required'}
+                }) }}
+            </div>
+
+            <div class="col-md-4">
+                {{ form_row(form.nationality, {
+                    'label': 'Nationalité*',
+                    'attr': {'class': 'form-control', 'required': 'required'}
+                }) }}
+            </div>
+
+
+            <div class="col-md-4">
+                {{ form_row(form.activityActuelle, {
+                    'label': 'Activité actuelle',
+                    'attr': {'class': 'form-control'}
+                }) }}
+            </div>
+        </div>
+    </div>
+</div>
+
+{# Section Adresse #}
+<div class="card mb-4">
+    <div class="card-header text-white" style="background-color: var(--primary)">
+        <h5 class="mb-0">Adresse</h5>
+    </div>
+    <div class="card-body">
+        <div class="row g-3">
+            <div class="col-md-4">
+                {{ form_row(form.country, {
+                    'label': 'Pays*',
+                    'attr': {'class': 'form-control', 'required': 'required'}
+                }) }}
+            </div>
+
+            <div class="col-md-4">
+                {{ form_row(form.city, {
+                    'label': 'Ville*',
+                    'attr': {'class': 'form-control', 'required': 'required'}
+                }) }}
+            </div>
+
+            <div class="col-md-4">
+                {{ form_row(form.address, {
+                    'label': 'Adresse complète*',
+                    'attr': {'class': 'form-control', 'required': 'required'}
+                }) }}
+            </div>
+        </div>
+    </div>
+</div>
+
+{# Section Coordonnées #}
+<div class="card mb-4">
+    <div class="card-header text-white" style="background-color: var(--primary)">
+        <h5 class="mb-0">Coordonnées</h5>
+    </div>
+    <div class="card-body">
+        <div class="row g-3">
+            <div class="col-md-6">
+                {{ form_row(form.telephone, {
+                    'label': 'Téléphone*',
+                    'attr': {'class': 'form-control', 'required': 'required'}
+                }) }}
+            </div>
+
+            <div class="col-md-6">
+                {{ form_row(form.email, {
+                    'label': 'Email*',
+                    'attr': {'class': 'form-control', 'required': 'required'}
+                }) }}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{# Boutons de soumission #}
+<div class="d-flex justify-content-between mt-4">
+    <button type="submit" class="btn btn-success" style="background-color: var(--primary)">
+        <i class="fas fa-save me-2"></i>Enregistrer
+    </button>
+</div>
+{{ form_end(form) }}

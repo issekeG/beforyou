@@ -3,8 +3,11 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Activity;
+use App\Entity\Formation;
+use App\Entity\FormationCategory;
 use App\Entity\Posts;
 use App\Entity\Realisation;
+use App\Entity\Student;
 use App\Entity\Subsidiary;
 use App\Entity\TeamMember;
 use App\Entity\Testimony;
@@ -50,9 +53,13 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
         yield MenuItem::linkToCrud('Filiale', 'fas fa-building', Subsidiary::class);
         yield MenuItem::linkToCrud('Activité', 'fas fa-chart-line', Activity::class);
-        yield MenuItem::linkToCrud('Réalisation', 'fas fa-tasks', Realisation::class);
-        yield MenuItem::linkToCrud('Article', 'fas fa-newspaper', Posts::class);
-        yield MenuItem::linkToCrud('Membre', 'fas fa-users', TeamMember::class);
-        yield MenuItem::linkToCrud('Témoignages', 'fas fa-quote-left', Testimony::class);
+        yield MenuItem::linkToCrud('Réalisation', 'fas fa-check-circle', Realisation::class);
+        yield MenuItem::linkToCrud('Article', 'far fa-newspaper', Posts::class);
+        yield MenuItem::linkToCrud('Membre', 'fas fa-user-friends', TeamMember::class);
+        yield MenuItem::linkToCrud('Témoignages', 'fas fa-comment-alt', Testimony::class);
+        yield MenuItem::linkToCrud('Formation', 'fas fa-graduation-cap', Formation::class);
+        yield MenuItem::linkToCrud('Formation Category', 'fas fa-layer-group', FormationCategory::class);
+        yield MenuItem::linkToCrud('Candidat', 'fas fa-user-graduate', Student::class);
+
     }
 }

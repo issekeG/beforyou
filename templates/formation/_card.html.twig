@@ -1,0 +1,54 @@
+{# templates/formation/_card.html.twig #}
+
+<div class="col-md-4 mb-4">
+    <a href="#">
+        <div class="card h-100 formation-card">
+            {# Image de la formation #}
+            <div style="position: relative;">
+                <!-- Icône favori positionnée en absolu -->
+                <div class="favorite-icon" style="position: absolute; top: 10px; right: 10px; z-index: 2;">
+                    <i class="fas fa-heart" style="color: #ff4757; font-size: 24px; background: rgba(255,255,255,0.7); padding: 5px; border-radius: 50%;"></i>
+                </div>
+
+                <!-- Image de la formation -->
+                <img
+                        src="{{ asset('uploads/formations/' ~ formation.image) }}"
+                        class="card-img-top"
+                        alt="{{ formation.title }}"
+                        style="height: 180px; object-fit: cover; width: 100%;"
+                >
+            </div>
+
+
+            {# Corps de la carte #}
+            <div class="card-body d-flex flex-column">
+                {# Titre #}
+                <h5 class="card-title">{{ formation.title|slice(0, 40) }}{% if formation.title|length > 40 %}...{% endif %}</h5>
+                <div class="row">
+                    <div>
+                        <small>Date de début : {{ formation.startedAt | date('d-m-y') }}</small>
+                    </div>
+                    <div>
+                        <small>Date de fin : {{ formation.endedAt | date('d-m-y') }}</small>
+                    </div>
+
+                </div>
+
+                <a href="{{ path('app_student_new') }}" class="btn text-white" style="background-color: var(--primary)">S'inscrire</a>
+
+            </div>
+        </div>
+    </a>
+
+</div>
+
+{# Style optionnel pour hover effect #}
+<style>
+    .formation-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .formation-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+</style>

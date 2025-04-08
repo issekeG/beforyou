@@ -21,9 +21,9 @@ class AppFixtures extends Fixture
         $admin = new User();
         $admin->setFirstname('Elisa');
         $admin->setLastname('Simonet');
-        $admin->setEmail('elisasimonet@beforyou241.com');
+        $admin->setEmail('gickelokabi@gmail.com');
         $admin->setRoles(['ROLE_ADMIN']);
-        $admin->setPassword($this->passwordHasher->hashPassword($admin, 'be-foryou123&admin')); // Remplacez "admin123" par un mot de passe sécurisé
+        $admin->setPassword($this->passwordHasher->hashPassword($admin, '11.Germain')); // Remplacez "admin123" par un mot de passe sécurisé
 
         $manager->persist($admin);
         $manager->flush();
