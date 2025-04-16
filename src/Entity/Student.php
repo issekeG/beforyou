@@ -28,9 +28,6 @@ class Student
     #[ORM\Column(length: 255)]
     private ?string $nationality = null;
 
-    #[ORM\ManyToOne(inversedBy: 'students')]
-    private ?FormationCategory $formation = null;
-
     #[ORM\Column(length: 255)]
     private ?string $schoolLevel = null;
 
@@ -51,6 +48,10 @@ class Student
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $email = null;
+
+    #[ORM\ManyToOne(inversedBy: 'students')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Formation $formation = null;
 
     public function getId(): ?int
     {
@@ -117,17 +118,7 @@ class Student
         return $this;
     }
 
-    public function getFormation(): ?FormationCategory
-    {
-        return $this->formation;
-    }
 
-    public function setFormation(?FormationCategory $formation): static
-    {
-        $this->formation = $formation;
-
-        return $this;
-    }
 
     public function getSchoolLevel(): ?string
     {
@@ -209,6 +200,18 @@ class Student
     public function setEmail(?string $email): static
     {
         $this->email = $email;
+
+        return $this;
+    }
+
+    public function getFormation(): ?Formation
+    {
+        return $this->formation;
+    }
+
+    public function setFormation(?Formation $formation): static
+    {
+        $this->formation = $formation;
 
         return $this;
     }

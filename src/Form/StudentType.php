@@ -2,8 +2,11 @@
 
 namespace App\Form;
 
+use App\Entity\Formation;
 use App\Entity\FormationCategory;
+use App\Entity\FormationSection;
 use App\Entity\Student;
+use PhpOffice\PhpSpreadsheet\Calculation\TextData\Format;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -54,11 +57,21 @@ class StudentType extends AbstractType
             ->add('address')
             ->add('telephone')
             ->add('email')
-            ->add('formation', EntityType::class, [
+
+            ->add('category', EntityType::class, [
                 'class' => FormationCategory::class,
                 'choice_label' => 'name',
+                'placeholder' => '',
+                'mapped' => false,
+                'multiple' => false,
             ])
-        ;
+            ->add('formation', EntityType::class, [ // ← on passe à ChoiceType pour le remplir dynamiquement
+                'mapped' => true,
+                'class' => Formation::class,
+                'choice_label' => 'title',
+                'placeholder' => '',
+                'multiple' => false,
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

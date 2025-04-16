@@ -9,6 +9,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
@@ -46,6 +47,7 @@ class StudentCrudController extends AbstractCrudController
             TextField::new('firstname', 'Prénom'),
             TextField::new('lastname', 'Nom'),
             TextField::new('sex', 'Sexe'),
+            IntegerField::new('age', 'Age'),
             AssociationField::new('formation', 'Formation'),
             TextField::new('nationality', 'Nationalité'),
             TextField::new('schoolLevel', "Niveau d'étude"),
@@ -89,15 +91,18 @@ class StudentCrudController extends AbstractCrudController
         $sheet->setCellValue('A1', 'Prénom');
         $sheet->setCellValue('B1', 'Nom');
         $sheet->setCellValue('C1', 'Sexe');
-        $sheet->setCellValue('D1', 'Nationalité');
-        $sheet->setCellValue('E1', "Formation");
-        $sheet->setCellValue('F1', "Niveau d'étude");
-        $sheet->setCellValue('G1', "Activité actuelle");
-        $sheet->setCellValue('H1', "Pays");
-        $sheet->setCellValue('I1', "Ville");
-        $sheet->setCellValue('J1', "Adresse");
-        $sheet->setCellValue('K1', "Téléphone");
-        $sheet->setCellValue('L1', "E-mail");
+        $sheet->setCellValue('D1', 'Age');
+        $sheet->setCellValue('E1', 'Nationalité');
+        $sheet->setCellValue('F1', "Formation");
+        $sheet->setCellValue('G1', "Secteur");
+        $sheet->setCellValue('H1', "Niveau d'étude");
+        $sheet->setCellValue('I1', "Activité actuelle");
+        $sheet->setCellValue('J1', "Pays");
+        $sheet->setCellValue('K1', "Ville");
+        $sheet->setCellValue('L1', "Adresse");
+        $sheet->setCellValue('M1', "Téléphone");
+        $sheet->setCellValue('N1', "E-mail");
+
 
         // Données
         $row = 2;
@@ -105,20 +110,22 @@ class StudentCrudController extends AbstractCrudController
             $sheet->setCellValue('A'.$row, $student->getFirstname());
             $sheet->setCellValue('B'.$row, $student->getLastname());
             $sheet->setCellValue('C'.$row, $student->getSex());
-            $sheet->setCellValue('D'.$row, $student->getNationality());
-            $sheet->setCellValue('E'.$row, $student->getFormation());
-            $sheet->setCellValue('F'.$row, $student->getSchoolLevel());
-            $sheet->setCellValue('G'.$row, $student->getActivityActuelle());
-            $sheet->setCellValue('H'.$row, $student->getCountry());
-            $sheet->setCellValue('I'.$row, $student->getCity());
-            $sheet->setCellValue('J'.$row, $student->getAddress());
-            $sheet->setCellValue('K'.$row, $student->getTelephone());
-            $sheet->setCellValue('L'.$row, $student->getEmail());
+            $sheet->setCellValue('D'.$row, $student->getAge());
+            $sheet->setCellValue('E'.$row, $student->getNationality());
+            $sheet->setCellValue('F'.$row, $student->getFormation());
+            $sheet->setCellValue('G'.$row, $student->getFormation()->getCategory());
+            $sheet->setCellValue('H'.$row, $student->getSchoolLevel());
+            $sheet->setCellValue('I'.$row, $student->getActivityActuelle());
+            $sheet->setCellValue('J'.$row, $student->getCountry());
+            $sheet->setCellValue('K'.$row, $student->getCity());
+            $sheet->setCellValue('L'.$row, $student->getAddress());
+            $sheet->setCellValue('M'.$row, $student->getTelephone());
+            $sheet->setCellValue('N'.$row, $student->getEmail());
             $row++;
         }
 
         // Auto-size des colonnes
-        for ($col = 'A'; $col <= 'K'; $col++) {
+        for ($col = 'A'; $col <= 'N'; $col++) {
             $sheet->getColumnDimension($col)->setAutoSize(true);
         }
 
@@ -146,8 +153,10 @@ class StudentCrudController extends AbstractCrudController
                 'Prénom',
                 'Nom',
                 'Sexe',
+                'Age',
                 'Nationalité',
                 'Formation',
+                'Secteur',
                 "Niveau d'étude",
                 'Activité actuelle',
                 'Pays',
@@ -164,8 +173,10 @@ class StudentCrudController extends AbstractCrudController
                     $student->getFirstname(),
                     $student->getLastname(),
                     $student->getSex(),
+                    $student->getAge(),
                     $student->getNationality(),
                     $student->getFormation(),
+                    $student->getFormation()->getCategory(),
                     $student->getSchoolLevel(),
                     $student->getActivityActuelle(),
                     $student->getCountry(),

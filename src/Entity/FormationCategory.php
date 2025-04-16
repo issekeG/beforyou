@@ -24,16 +24,12 @@ class FormationCategory
     #[ORM\OneToMany(targetEntity: Formation::class, mappedBy: 'category')]
     private Collection $formations;
 
-    /**
-     * @var Collection<int, Student>
-     */
-    #[ORM\OneToMany(targetEntity: Student::class, mappedBy: 'formation')]
-    private Collection $students;
+
 
     public function __construct()
     {
         $this->formations = new ArrayCollection();
-        $this->students = new ArrayCollection();
+
     }
 
     public function getId(): ?int
@@ -83,35 +79,6 @@ class FormationCategory
         return $this;
     }
 
-    /**
-     * @return Collection<int, Student>
-     */
-    public function getStudents(): Collection
-    {
-        return $this->students;
-    }
-
-    public function addStudent(Student $student): static
-    {
-        if (!$this->students->contains($student)) {
-            $this->students->add($student);
-            $student->setFormation($this);
-        }
-
-        return $this;
-    }
-
-    public function removeStudent(Student $student): static
-    {
-        if ($this->students->removeElement($student)) {
-            // set the owning side to null (unless already changed)
-            if ($student->getFormation() === $this) {
-                $student->setFormation(null);
-            }
-        }
-
-        return $this;
-    }
 
     public function __toString():string{
         return $this->getName();

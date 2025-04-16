@@ -37,4 +37,14 @@ class FormationRepository extends ServiceEntityRepository
     //            ->getOneOrNullResult()
     //        ;
     //    }
+
+    public function findByCategories(array $categoryIds): array
+    {
+        return $this->createQueryBuilder('f')
+            ->join('f.category', 'c')
+            ->where('c.id IN (:ids)')
+            ->setParameter('ids', $categoryIds)
+            ->getQuery()
+            ->getResult();
+    }
 }

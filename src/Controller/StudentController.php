@@ -22,25 +22,27 @@ final class StudentController extends AbstractController
         ]);
     }
 
-    #[Route('/new', name: 'app_student_new', methods: ['GET', 'POST'])]
+    #[Route('/formation-enregistrement', name: 'app_student_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         $student = new Student();
         $form = $this->createForm(StudentType::class, $student);
         $form->handleRequest($request);
-        $message = "";
 
 
         if ($form->isSubmitted() && $form->isValid()) {
+
             $entityManager->persist($student);
             $entityManager->flush();
-            $message = 'Votre inscription a bien été effectuée. Nous vous recontacterons dans les meilleurs délais';
+
+            $this->addFlash('success', 'Votre inscription a bien été effectuée. Nous vous recontacterons dans les meilleurs délais.');
+
+            return $this->redirectToRoute('app_student_new');
         }
 
         return $this->render('student/new.html.twig', [
             'student' => $student,
             'form' => $form,
-            'message'=>$message
         ]);
     }
 

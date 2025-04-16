@@ -39,7 +39,11 @@
                         </div>
                     </div>
                     <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-7">
-                        <small style="color: green">{{ message }}</small>
+                        {% for message in app.flashes('success') %}
+                            <div class="alert alert-success">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
                         <div class="contact__form">
                             {{ include('student/_form.html.twig') }}
                         </div>

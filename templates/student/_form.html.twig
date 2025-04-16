@@ -5,12 +5,17 @@
         <h5 class="mb-0">Formation</h5>
     </div>
     <div class="card-body">
-        <div class="row">
-            <div class="col-12">
+        <div class="row g-3">
+            <div class="col-md-6">
+                {{ form_row(form.category, {
+                    'label': 'Section de la formation*',
+                    'attr': {'class': 'form-select formation-category-select'},
+                }) }}
+            </div>
+            <div class="col-md-6">
                 {{ form_row(form.formation, {
                     'label': 'Formation souhaitée*',
-                    'attr': {'class': 'form-select', 'required': 'required'},
-                    'placeholder': '-- Choisir une formation --'
+                    'attr': {'class': 'form-select formation-select', 'required': 'required'},
                 }) }}
             </div>
         </div>

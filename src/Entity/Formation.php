@@ -65,6 +65,12 @@ class Formation
     #[ORM\Column(options: ['default' => 'CURRENT_TIMESTAMP'])]
     private ?\DateTimeImmutable $publishedAt = null;
 
+    /**
+     * @var Collection<int, Student>
+     */
+    #[ORM\OneToMany(targetEntity: Student::class, mappedBy: 'formation')]
+    private Collection $students;
+
     public function getPublishedAt(): ?\DateTimeImmutable
     {
         return $this->publishedAt;
@@ -80,6 +86,7 @@ class Formation
 
         $this->formationSections = new ArrayCollection();
         $this->publishedAt = new \DateTimeImmutable();
+        $this->students = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -128,7 +135,7 @@ class Formation
         return $this->image;
     }
 
-    public function setImage(string $image): static
+    public function setImage(?string $image): static
     {
         $this->image = $image;
 
@@ -216,5 +223,39 @@ class Formation
         $this->endedAt = $endedAt;
 
         return $this;
+    }
+
+    /**
+     * @return Collection<int, Student>
+     */
+    public function getStudents(): Collection
+    {
+        return $this->students;
+    }
+
+    public function addStudent(Student $student): static
+    {
+        if (!$this->students->contains($student)) {
+            $this->students->add($student);
+            $student->setFormation($this);
+        }
+
+        return $this;
+    }
+
+    public function removeStudent(Student $student): static
+    {
+        if ($this->students->removeElement($student)) {
+            // set the owning side to null (unless already changed)
+            if ($student->getFormation() === $this) {
+                $student->setFormation(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function __toString(): string{
+        return $this->title;
     }
 }

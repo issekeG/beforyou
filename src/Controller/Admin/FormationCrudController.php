@@ -29,13 +29,13 @@ class FormationCrudController extends AbstractCrudController
         return [
             IdField::new('id')->onlyOnIndex(),
             SlugField::new('slug')->setTargetFieldName(['title'])->onlyOnDetail(),
-            DateTimeField::new('publishedAt','Date de creation')->onlyOnIndex(),
-            DateTimeField::new('startedAt', 'Date de début'),
-            DateTimeField::new('endedAt', 'Date de fin'),
-            AssociationField::new('category', 'Catégorie'),
-            TextField::new('title', 'Titre'),
-            TextEditorField::new('description', 'Description de la formation'),
-            TextField::new('imageFile','Image')->setFormType(VichImageType::class)->hideOnIndex(),
+            DateTimeField::new('publishedAt','Date de creation')->setRequired(true)->onlyOnIndex(),
+            DateTimeField::new('startedAt', 'Date de début')->setRequired(true),
+            DateTimeField::new('endedAt', 'Date de fin')->setRequired(true),
+            AssociationField::new('category', 'Catégorie')->setRequired(true),
+            TextField::new('title', 'Titre')->setRequired(true),
+            TextEditorField::new('description', 'Description de la formation')->setRequired(true),
+            TextField::new('imageFile','Image')->setFormType(VichImageType::class)->hideOnIndex()->setRequired(true),
             ImageField::new('image')->setBasePath('/uploads/formations')->OnlyOnIndex(),
 
             CollectionField::new('formationSections', "Sections de la formation")
